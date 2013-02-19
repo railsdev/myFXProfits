@@ -1,0 +1,13 @@
+	<div class = "container">
+	<%= form_for(@user) do |f| %>
+	    
+	      <%= f.text_field :email, :placeholder => "Insert Email Here"%>
+
+	      <%= f.password_field :password, :placeholder => "Password" %>
+
+	      <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+	      <br>
+	      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+
+	    <% end %>
+	</div>

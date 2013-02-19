@@ -1,4 +1,19 @@
 Tradesite::Application.routes.draw do
+
+  #Resources
+  resource :users
+  resource :pages
+  resource :sessions
+
+  #Root
+  root to: 'pages#home'
+  
+  #Users Pages
+  match '/signup',  to: 'users#new'
+  
+  #Sessions Pages
+  match '/login',   to: 'sessions#new'
+  match '/logout',  to: 'sessions#destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

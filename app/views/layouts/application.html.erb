@@ -5,8 +5,16 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <% if !signed_in? %>
+  <%= render 'layouts/header' %>
+  <% else %>
+  <%= render 'layouts/headerSign' %>
+  <% end %>
 </head>
 <body>
+	<br>
+	<br>
+	<br>
 
 <%= yield %>
 
