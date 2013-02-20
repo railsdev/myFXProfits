@@ -17,19 +17,41 @@ width: 920px;
 margin: 0 auto;
 }
 
+.center {
+  text-align: center;
+}
+
 .body { 
 padding-top: 500px;
 color: #333333;
 }
 
-a:hover {
-	color: red;
+.right { 
+float: right;
+}
+
+.left { 
+float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.logo { 
+font-size: 50px;
+padding: 5px;
+}
+
+.header-container { 
+height: 50px;
+padding-top: 15px;
+background-color: #FFF;
 }
 
 .fieldgroup {
 position: relative;
 margin-top: 10px;
-width: 80%;
 }
 
 div {
@@ -38,19 +60,24 @@ display: block;
 
 .fieldgroup .fields {
 margin: 10px 0 0 0;
-padding: 10px;
+padding: 15px;
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.45, #FFF),
+	color-stop(0.73, #FEFEFE),
+	color-stop(0.76, #F8F8F8)
+);
 
-background: url("https://a248.e.akamai.net/assets.github.com/images/modules/account/fieldgroup_back.png?d04e7878") 0 0 no-repeat;
+border: 1px solid #EEE;
+border-bottom: 1px solid #F3F3F3;
 }
 
-dl.form {
-margin: 15px 0;
+.fields .names input {
+width: 200px;
 }
 
-dl {
-display: block;
--webkit-margin-before: 1em;
--webkit-margin-after: 1em;
--webkit-margin-start: 0px;
--webkit-margin-end: 0px;
+.fields input {
+width: 417px;
 }
