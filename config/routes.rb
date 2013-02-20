@@ -7,6 +7,9 @@ Tradesite::Application.routes.draw do
 
   #Root
   root to: 'pages#home'
+
+  #Pages
+  match '/about', to: 'pages#about'
   
   #Users Pages
   match '/signup',  to: 'users#new'

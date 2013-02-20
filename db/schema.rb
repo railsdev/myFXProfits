@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219154033) do
+ActiveRecord::Schema.define(:version => 20130220183259) do
 
   create_table "sessions", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20130219154033) do
     t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
+    t.boolean  "trial"
+    t.boolean  "paid"
   end
 
 end

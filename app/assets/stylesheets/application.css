@@ -48,6 +48,15 @@ padding-top: 15px;
 background-color: #FFF;
 }
 
+.headerlinks{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.headerlinks:hover{
+	background: #F5F5F5;
+}
+
 .fieldgroup {
 position: relative;
 margin-top: 10px;

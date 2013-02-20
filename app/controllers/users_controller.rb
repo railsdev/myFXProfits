@@ -16,10 +16,22 @@ end
 
   def create
     @user = User.new(params[:user])
+      if params[:user][:paid]
+        @user.trial = false 
+        @user.paid  = true
+      else 
+        @user.paid  = false
+        @user.trial = true
+      end
+
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
-      sign_in @user
-      redirect_to "/"
+        UserMailer.registration_confirmation(@user).deliver
+        sign_in @user
+        if @user.paid
+          redirect_to '/Account'
+        else 
+        redirect_to "/"
+        end
     else  
     render 'new'
     end
