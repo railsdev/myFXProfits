@@ -2,23 +2,20 @@
 <html>
 <script src="twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>  
 <script src="twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>  
-<head>
-  <title>Tradesite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <% if !signed_in? %>
-  <%= render 'layouts/header' %>
-  <% else %>
-  <%= render 'layouts/headerSign' %>
-  <% end %>
-</head>
-<body>
-	<br>
-	<br>
-	<br>
+  <head>
+    <title>MyFX-Profits</title>
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+      <% if !signed_in? %>
+      <%= render 'layouts/header' %>
+      <% else %>
+      <%= render 'layouts/headerSign' %>
+      <% end %>
+  </head>
+  <body>
+    
+    <%= yield %>
 
-<%= yield %>
-
-</body>
+  </body>
 </html>
