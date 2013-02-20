@@ -13,6 +13,8 @@ Tradesite::Application.routes.draw do
   
   #Users Pages
   match '/signup',  to: 'users#new'
+  match '/updateplan', to: 'users#paypal'
+  match '/paypal/checkout', to: 'users#paypal_checkout'
   
   #Sessions Pages
   match '/login',   to: 'sessions#new'
