@@ -1,33 +1,13 @@
 <div class = "container">
 	<div style = "width: 470px; margin-left: 235px;">
 		<div class = "fieldgroup">
-			<div class = "fields">
-				<%= form_for(:session, url: paypal_path) do |f| %>
-				<h6>Payment Method</h6>
-					<div class="field">
-						<%= radio_button_tag :pay_with, :card, true %>
-						<%= label_tag :pay_with_card do %>
-						<%= image_tag "visa.png" %>
-						<%= image_tag "mastercard.png" %>
-						<%= image_tag "discover.png" %>
-						<%= image_tag "american_express.png" %>
-						<%= image_tag "jcb.png" %>
-						<% end %>
-						<%= radio_button_tag :pay_with, :paypal %>
-						<%= label_tag :pay_with_paypal do %>
-						<%= image_tag "paypal.png" %>
-						<% end %>
-					</div>
-					<div id="paypal_checkout">
-						<%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), 'paypal/checkout'%>
-					</div>
-				<h6>Password <a href = "/" >(Forgot Password?)</a></h6>
-					<%= f.password_field :password, :placeholder => "Password"%>
-						<br>
-						<br>
-					<%= f.submit "Sign In!", class: "btn" %>
-					<h6 class = "right" style = "display: inline; padding: 0px; margin-top: 7px;"> <a href = '/signup'>Not Registered? Sign Up for a free trial!</a></h6>
-				<% end %>
+			<div class = "fields center">
+
+				<h5 class = "center">By checking out with PayPal you agree to a subscription of: $50/month</h5>
+				<h6>Follow the link below to checkout with paypal</h6>
+	
+					<div style = "width: 100px; height: auto; padding-left: 185px;">
+						<%= link_to image_tag("paypal.png"), 'paypal/checkout'%>
 			</div>
 		</div>
 	</div>
