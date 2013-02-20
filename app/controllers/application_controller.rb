@@ -7,5 +7,11 @@ class ApplicationController < ActionController::Base
 	      redirect_to "/login"
 	    end
 	end
+
+	def registered
+		if !@user.registered
+			redirect_to(:back)
+		end
+	end
 end
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+before_filter :session_exists, :only => [:paypal, :paypal_checkout]
   def new
   	if signed_in?
 	  redirect_to '/'
@@ -12,14 +12,14 @@ class UsersController < ApplicationController
       redirect_to '/'
     end
   @user = User.find_by_email(params[:email])
-end
+  end
   
   def paypal
     @user = current_user 
-    @user
   end
 
   def paypal_checkout
+    @user = current_user
       ppr = PayPal::Recurring.new({
         :return_url =>  root_url,
         :cancel_url =>  root_url,
@@ -30,6 +30,7 @@ end
       response = ppr.checkout
       if response.valid?
           redirect_to response.checkout_url
+          @user.registered = true
       else 
           raise response.errors.inspect
       end
