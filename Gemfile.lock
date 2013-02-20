@@ -112,6 +112,7 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.6.1)
     nokogiri (1.5.6)
+    paypal-recurring (1.1.0)
     pg (0.12.2)
     pismo (0.7.2)
       awesome_print
@@ -227,6 +228,7 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   mail (= 2.4.4)
   meta_request
+  paypal-recurring
   pg (= 0.12.2)
   pismo (= 0.7.2)
   rails (= 3.2.11)

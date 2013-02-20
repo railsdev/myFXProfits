@@ -38,6 +38,10 @@ font-size: 50px;
 padding: 5px;
 }
 
+.formtext{ 
+color: #000;
+}
+
 .header-container { 
 height: 50px;
 padding-top: 15px;
