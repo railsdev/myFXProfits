@@ -19,4 +19,38 @@ margin: 0 auto;
 
 .body { 
 padding-top: 500px;
+color: #333333;
+}
+
+a:hover {
+	color: red;
+}
+
+.fieldgroup {
+position: relative;
+margin-top: 10px;
+width: 80%;
+}
+
+div {
+display: block;
+}
+
+.fieldgroup .fields {
+margin: 10px 0 0 0;
+padding: 10px;
+
+background: url("https://a248.e.akamai.net/assets.github.com/images/modules/account/fieldgroup_back.png?d04e7878") 0 0 no-repeat;
+}
+
+dl.form {
+margin: 15px 0;
+}
+
+dl {
+display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
 }
