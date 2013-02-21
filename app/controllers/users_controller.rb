@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-before_filter :session_exists, :only => [:paypal, :paypal_checkout]
   def new
   	if signed_in?
 	  redirect_to '/'
@@ -19,12 +18,13 @@ before_filter :session_exists, :only => [:paypal, :paypal_checkout]
   end
 
   def paypal_checkout
+  
     user = current_user
     redirect_to user.paypal.checkout_url(
         :return_url =>  confirmpayment_url,
         :cancel_url =>  root_url
         )
-  end
+end
 
   def confirm 
     @user = current_user
@@ -44,22 +44,14 @@ before_filter :session_exists, :only => [:paypal, :paypal_checkout]
 
   def create
     @user = User.new(params[:user])
-      if params[:user][:paid]
-        @user.trial = false 
-        @user.paid  = true
-      else 
-        @user.paid  = false
-        @user.trial = true
-      end
-
     if @user.save
         UserMailer.registration_confirmation(@user).deliver
         sign_in @user
-        if @user.paid
-          redirect_to '/updateplan'
-        else 
-        redirect_to "/"
-        end
+       if @user.paid
+          redirect_to paypal_checkout_path
+       else
+       redirect_to '/'
+     end
     else  
     render 'new'
     end

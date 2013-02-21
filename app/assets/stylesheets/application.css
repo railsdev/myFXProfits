@@ -84,8 +84,7 @@ background-image: -webkit-gradient(
 	left bottom,
 	left top,
 	color-stop(0.45, #FFF),
-	color-stop(0.73, #FEFEFE),
-	color-stop(0.76, #F8F8F8)
+	color-stop(0.73, #F8F8F8)
 );
 
 border: 1px solid #EEE;

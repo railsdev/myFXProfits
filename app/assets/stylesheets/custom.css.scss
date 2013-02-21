@@ -14,11 +14,11 @@ a:hover { font-color: #005; }
 a:active { }
 a{ color: #030353; }
 
-.btn:hover#signin {
-	color: #999;
-}
 .btn:active#signin {
 	color: #999;
+}
+.btn#signin {
+	width: 60px;
 }
 
 //Heading Overrides

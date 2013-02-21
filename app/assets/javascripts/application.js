@@ -13,11 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$('#pay_with_paypal').click ->
-  $('#paid').show()
-  $('#free').hide()
-  true
-$('#pay_with_card').click ->
-  $('#paid').hide()
-  $('#free').show()
-  true

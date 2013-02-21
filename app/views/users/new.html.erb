@@ -5,11 +5,11 @@
 <script> 
 function switchSubmit()
 {
-if(document.getElementById('pay_with_free').checked){
+if(document.getElementById('user_paid_false').checked){
 	$('#paid').hide()
 	$('#free').show()
 	}
-if( document.getElementById('pay_with_paypal').checked){
+if( document.getElementById('user_paid_true').checked){
 	$('#paid').show()
   	$('#free').hide()
   	}	
@@ -39,21 +39,22 @@ if( document.getElementById('pay_with_paypal').checked){
 			<br>
 			<div class="field">
 				<table id = "field">
-				<td>
-  				<%= radio_button_tag :pay_with, :free, true, :checked => (:paid == false), class: "left", :onclick => "switchSubmit()" %>
-  			
-				<h6 style = "display: inline; padding: 5px;">Sign Up For a Free Account</h5>
-		
-				<%= radio_button_tag :pay_with, :paypal, false, :checked => (:paid == true), class: "left", :onclick => "switchSubmit()" %>
 				
-				<h6 style = "display: inline;  padding: 5px;">Sign Up For a Paid Account</h5>
-	
+				<td>
+
+			<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%> 
+			<%= f.label :paid, "Free Account", :value => false, style: "width: 225px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
+
+			<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
+			<%= f.label :paid, 'Paid Account', :value => true, style: "width: 230px; padding-left: 20px; padding-top: 2px;"%>
+			
 				</td>
-				<td style = "width: 250px;">
-				<span id = "free" >
+
+				<td style = "width: 200px;">
+				<span id = "free" class = "right" >
 					<%= f.submit "Create a Free Account", class: "btn btn-large btn-success right", style: "width: 200px;"%>
 				</span>
-				<span id = "paid" style = "display: none;">
+				<span id = "paid" style = "display: none;" class = "right">
 					<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-success right", style: "width: 200px;"%>
 				</span>
 			</td>
