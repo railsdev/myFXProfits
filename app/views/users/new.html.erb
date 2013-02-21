@@ -1,3 +1,7 @@
+<% provide(:button, '/login') %>
+<% provide(:button_content, "Sign In")%>
+<% provide(:title, "") %>
+
 <div class = "container">
 	<table class = "bordered">
 	<td style = "width: 465px;">
@@ -19,7 +23,7 @@
 			<br>
 			<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 			<br>
-			<span class = "left" style = "padding: 3px;">Sign Up For a Paid Plan?</span> <%= f.check_box :paid %>
+			<span class = "left" style = "padding: 4px;">Sign Up For a Paid Plan?</span> <%= f.check_box :paid %>
 			<%= f.submit "Create my account", class: "btn btn-large btn-success right"%>
 			<br>
 

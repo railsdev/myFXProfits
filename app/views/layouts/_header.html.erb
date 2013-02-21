@@ -1,8 +1,9 @@
 <div class="header-container" style="border-bottom:1px solid #ddd;">    
   <div class = "container clearfix">
     <span class = "logo left">
-
+        <a href = "/signup">
      <span style = "font-size: 70%;">MY</span>FX<span style = "font-size: 70%;">PROFITS</span>
+        </a>
     </span>
     <h5 class = "left" style = "display: inline; padding-left: 20px; ">
      <a href = '/about' class = "headerlinks"> About </a>
@@ -11,7 +12,7 @@
      <a href = '/' class = "headerlinks"> Trading Room</a>
     </h5>
     <span>
-      <a class = "btn right" href="/login">Sign In</a>
+      <a class = "btn right" href= <%= yield(:button) %>><%= yield(:button_content)%></a>
     </span>
     </span>
   </div>

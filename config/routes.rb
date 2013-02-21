@@ -1,24 +1,25 @@
 Tradesite::Application.routes.draw do
 
   #Resources
-  resource :users
-  resource :pages
-  resource :sessions
+  resources :users
+  resources :pages
+  resources :sessions
 
   #Root
-  root to: 'pages#home'
+  root                      to: 'pages#home'
 
   #Pages
-  match '/about', to: 'pages#about'
+  match '/about',           to: 'pages#about'
   
   #Users Pages
-  match '/signup',  to: 'users#new'
-  match '/updateplan', to: 'users#paypal'
+  match '/signup',          to: 'users#new'
+  match '/updateplan',      to: 'users#paypal'
   match '/paypal/checkout', to: 'users#paypal_checkout'
+  match '/confirmpayment',  to: 'users#confirm'
   
   #Sessions Pages
-  match '/login',   to: 'sessions#new'
-  match '/logout',  to: 'sessions#destroy'
+  match '/login',           to: 'sessions#new'
+  match '/logout',          to: 'sessions#destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

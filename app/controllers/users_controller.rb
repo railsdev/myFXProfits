@@ -21,7 +21,7 @@ before_filter :session_exists, :only => [:paypal, :paypal_checkout]
   def paypal_checkout
     @user = current_user
       ppr = PayPal::Recurring.new({
-        :return_url =>  root_url,
+        :return_url =>  confirmpayment_url,
         :cancel_url =>  root_url,
         :description  => "myFXprofits Monthy Subscription",
         :amount     => "50.00",
@@ -30,12 +30,19 @@ before_filter :session_exists, :only => [:paypal, :paypal_checkout]
       response = ppr.checkout
       if response.valid?
           redirect_to response.checkout_url
-          @user.registered = true
       else 
           raise response.errors.inspect
       end
   end
 
+  def confirm 
+    @user = current_user
+    if params[:PayerID]
+        @user.paypal_customer_token = params[:PayerID]
+        @user.paypal_payment_token  = params[:id]
+      end
+    @user.save
+  end
 
   def create
     @user = User.new(params[:user])
