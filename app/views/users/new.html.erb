@@ -1,7 +1,21 @@
 <% provide(:button, '/login') %>
 <% provide(:button_content, "Sign In")%>
-<% provide(:title, "") %>
+<% provide(:title, "myFxProfits") %>
 
+<script> 
+function switchSubmit()
+{
+if(document.getElementById('pay_with_free').checked){
+	$('#paid').hide()
+	$('#free').show()
+	}
+if( document.getElementById('pay_with_paypal').checked){
+	$('#paid').show()
+  	$('#free').hide()
+  	}	
+}
+
+</script>
 <div class = "container">
 	<table class = "bordered">
 	<td style = "width: 465px;">
@@ -23,10 +37,28 @@
 			<br>
 			<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 			<br>
-			<span class = "left" style = "padding: 4px;">Sign Up For a Paid Plan?</span> <%= f.check_box :paid %>
-			<%= f.submit "Create my account", class: "btn btn-large btn-success right"%>
-			<br>
-
+			<div class="field">
+				<table id = "field">
+				<td>
+  				<%= radio_button_tag :pay_with, :free, true, :checked => (:paid == false), class: "left", :onclick => "switchSubmit()" %>
+  			
+				<h6 style = "display: inline; padding: 5px;">Sign Up For a Free Account</h5>
+		
+				<%= radio_button_tag :pay_with, :paypal, false, :checked => (:paid == true), class: "left", :onclick => "switchSubmit()" %>
+				
+				<h6 style = "display: inline;  padding: 5px;">Sign Up For a Paid Account</h5>
+	
+				</td>
+				<td style = "width: 250px;">
+				<span id = "free" >
+					<%= f.submit "Create a Free Account", class: "btn btn-large btn-success right", style: "width: 200px;"%>
+				</span>
+				<span id = "paid" style = "display: none;">
+					<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-success right", style: "width: 200px;"%>
+				</span>
+			</td>
+		</table>
+			</div>
 		<% end %>
 		</div>
 	</div>

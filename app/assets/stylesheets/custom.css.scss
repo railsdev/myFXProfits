@@ -10,9 +10,16 @@ background-color: #F5F5F5;
 
 a:link { text-decoration:none; font-color: #000; }
 a:visited { text-decoration:line-through; }
-a:hover { font-weight:bold; font-color: #000; }
-a:active { font-weight:bold; }
+a:hover { font-color: #005; }
+a:active { }
 a{ color: #030353; }
+
+.btn:hover#signin {
+	color: #999;
+}
+.btn:active#signin {
+	color: #999;
+}
 
 //Heading Overrides
 
