@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def paypal_checkout
-  
     user = current_user
     redirect_to user.paypal.checkout_url(
         :return_url =>  confirmpayment_url,
@@ -39,7 +38,7 @@ end
       end
       logger.debug(@user.paypal_customer_token)
       logger.debug(@user.paypal_payment_token )
-    @user.save
+    @user.save!
   end
 
   def create

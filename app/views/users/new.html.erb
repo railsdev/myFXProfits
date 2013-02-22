@@ -17,9 +17,14 @@ if( document.getElementById('user_paid_true').checked){
 
 </script>
 <div class = "container">
-	<table class = "bordered">
+	 <% if @user.errors.any? %>
+         <div class = "alert">
+            <%= @user.errors.full_messages[0] %>
+         </div>
+    <% end %>
+	<table class = "bordered"  style = "display: inline;">
 	<td style = "width: 465px;">
-	<div class = "fieldgroup">
+	<div class = "fieldgroup"  style = "display: inline;">
 		<div class = "fields">
 
 		<%= form_for(@user) do |f| %>
@@ -43,18 +48,18 @@ if( document.getElementById('user_paid_true').checked){
 				<td>
 
 			<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%> 
-			<%= f.label :paid, "Free Account", :value => false, style: "width: 225px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
+			<%= f.label :paid, "Free Account", :value => false, style: "width: 210px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
 
 			<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
-			<%= f.label :paid, 'Paid Account', :value => true, style: "width: 230px; padding-left: 20px; padding-top: 2px;"%>
+			<%= f.label :paid, 'Paid Account', :value => true, style: "width: 210px; padding-left: 20px; padding-top: 2px;"%>
 			
 				</td>
 
 				<td style = "width: 200px;">
-				<span id = "free" class = "right" >
+				<span id = "free"  >
 					<%= f.submit "Create a Free Account", class: "btn btn-large btn-success right", style: "width: 200px;"%>
 				</span>
-				<span id = "paid" style = "display: none;" class = "right">
+				<span id = "paid" style = "display: none;" >
 					<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-success right", style: "width: 200px;"%>
 				</span>
 			</td>
@@ -64,7 +69,8 @@ if( document.getElementById('user_paid_true').checked){
 		</div>
 	</div>
 </td>
-<td style = "padding-left: 15px;">
+<td style = "padding-left: 15px; width: 465px;">
+ 
 	<h1>Welcome to <span style = "font-size: 70%;">MY</span>FX<span style = "font-size: 70%;">PROFITS</span></h1>
 
 	<table> 

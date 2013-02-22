@@ -84,11 +84,11 @@ background-image: -webkit-gradient(
 	left bottom,
 	left top,
 	color-stop(0.45, #FFF),
-	color-stop(0.73, #F8F8F8)
+	color-stop(0.73, #F3F3F3)
 );
 
 border: 1px solid #EEE;
-border-bottom: 1px solid #F3F3F3;
+border-bottom: 1px solid #F3FFF3;
 }
 
 .fields .names input {

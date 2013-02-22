@@ -4,15 +4,16 @@
 
 body { 
 background-color: #F5F5F5;
+margin-bottom: 100px;
 }
 
 //Links
 
 a:link { text-decoration:none; font-color: #000; }
 a:visited { text-decoration:line-through; }
-a:hover { font-color: #005; }
+a:hover { font-color: #040; }
 a:active { }
-a{ color: #030353; }
+a{ color: #010; }
 
 .btn:active#signin {
 	color: #999;

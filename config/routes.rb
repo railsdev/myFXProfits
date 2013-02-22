@@ -1,9 +1,12 @@
 Tradesite::Application.routes.draw do
 
+  get "password_resets/new"
+
   #Resources
   resources :users
   resources :pages
   resources :sessions
+  resources :password_resets
 
   #Root
   root                      to: 'pages#home'
@@ -20,6 +23,11 @@ Tradesite::Application.routes.draw do
   #Sessions Pages
   match '/login',           to: 'sessions#new'
   match '/logout',          to: 'sessions#destroy'
+
+  #Password Resets 
+  match '/reset',           to: 'password_resets#new'
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

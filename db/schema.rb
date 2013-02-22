@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220220408) do
+ActiveRecord::Schema.define(:version => 20130221203344) do
 
   create_table "sessions", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20130220220408) do
     t.string   "paypal_customer_token"
     t.string   "paypal_recurring_token"
     t.string   "paypal_payment_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

@@ -8,7 +8,7 @@
 				<%= form_for(:session, url: sessions_path) do |f| %>
 				<h6>Email or Username</h6>
 					<%= f.text_field :email, :placeholder => "Insert Email Here"%>
-				<h6>Password <a href = "/" >(Forgot Password?)</a></h6>
+				<h6>Password <a href = '/reset' >(Forgot Password?)</a></h6>
 					<%= f.password_field :password, :placeholder => "Password"%>
 						<br>
 						<br>
