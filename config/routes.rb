@@ -9,8 +9,8 @@ Tradesite::Application.routes.draw do
   resources :password_resets
 
   #Root
-  root                      to: 'pages#home'
-
+ # root                      to: 'pages#home'
+  root                      to: 'users#new'
   #Pages
   match '/about',           to: 'pages#about'
   

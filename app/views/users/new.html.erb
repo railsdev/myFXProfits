@@ -1,5 +1,3 @@
-<% provide(:button, '/login') %>
-<% provide(:button_content, "Sign In")%>
 <% provide(:title, "myFxProfits") %>
 
 <script> 
@@ -22,67 +20,61 @@ if( document.getElementById('user_paid_true').checked){
             <%= @user.errors.full_messages[0] %>
          </div>
     <% end %>
-	<table class = "bordered"  style = "display: inline;">
-	<td style = "width: 465px;">
+<table class = "bordered"  style = "display: inline;">
+	<td class = "HomePageCol1">
 	<div class = "fieldgroup"  style = "display: inline;">
 		<div class = "fields">
 
 		<%= form_for(@user) do |f| %>
+
 		<h3 class = "formtext">Sign Up</h3>
 			<span class = "names">
 				<%= f.text_field :firstname, :placeholder => "First Name"%>
 				<%= f.text_field :lastname, :placeholder => "Last Name"%>
 			</span>
-			<br>
-			<%= f.text_field :name, :placeholder => "Username"%>
-			<br>
-			<%= f.text_field :email, :placeholder => "Email" %>
-			<br>
-			<%= f.password_field :password, :placeholder => "Password" %>
-			<br>
-			<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
-			<br>
+				<br>
+				<%= f.text_field :name, :placeholder => "Username"%>
+				<br>
+				<%= f.text_field :email, :placeholder => "Email" %>
+				<br>
+				<%= f.password_field :password, :placeholder => "Password" %>
+				<br>
+				<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+				<br>
 			<div class="field">
 				<table id = "field">
 				
 				<td>
 
-			<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%> 
-			<%= f.label :paid, "Free Account", :value => false, style: "width: 210px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
+					<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%> 
+					<%= f.label :paid, "Free Account", :value => false, style: "width: 190px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
 
-			<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
-			<%= f.label :paid, 'Paid Account', :value => true, style: "width: 210px; padding-left: 20px; padding-top: 2px;"%>
-			
+					<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
+					<%= f.label :paid, 'Paid Account', :value => true, style: "width: 190px; padding-left: 20px; padding-top: 2px;"%>
+					
 				</td>
 
-				<td style = "width: 200px;">
-				<span id = "free"  >
-					<%= f.submit "Create a Free Account", class: "btn btn-large btn-success right", style: "width: 200px;"%>
-				</span>
-				<span id = "paid" style = "display: none;" >
-					<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-success right", style: "width: 200px;"%>
-				</span>
-			</td>
-		</table>
+					<td style = "width: 220px;">
+					<span id = "free"  >
+						<%= f.submit "Create a Free Account", class: "btn btn-large btn-success right", style: "width: 220px;"%>
+					</span>
+					<span id = "paid" style = "display: none;" >
+						<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-success right", style: "width: 220px;"%>
+					</span>
+					</td>
+				</table>
 			</div>
 		<% end %>
 		</div>
 	</div>
-</td>
-<td style = "padding-left: 15px; width: 465px;">
- 
-	<h1>Welcome to <span style = "font-size: 70%;">MY</span>FX<span style = "font-size: 70%;">PROFITS</span></h1>
-
-	<table> 
-	<td style = "width: 250px;">
-		<br>
-		<br>
-		<p>Are you sick and tired of all kinds of indicators and all the hype out there, <span style = "font-size: 80%;">MY</span>FX<span style = "font-size: 80%;">PROFITS</span> will help you, <span style = "font-size: 80%;">MY</span>FX<span style = "font-size: 80%;">PROFITS</span>.com uses a state of the art robot to facilitate and correctly trade the markets.</p>
 	</td>
-	<td>
-		<img style = "padding: 0px; height: auto; width: 200px;" src = "./../assets/forex.png"/>
+
+	<td class = "HomePageCol2">
+	 
+			<h2 class = "center" style =  "font-weight: normal;">Everything you need to become a successful trader</h2>
+			<h4 style = "font-weight: normal; color: #AAA;" class = "center">Expert coaching, chatrooms, trade alerts, archived lessons and realtime trading rooms</h4>
+			<h5 class = "center"> 30 Pips And You're Done </h5>
 	</td>
 </table>
-	<h5 class = "center"> 21 Pips And You're Done </h5>
-	</td>
+
 </div>
