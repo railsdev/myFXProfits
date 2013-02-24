@@ -47,6 +47,7 @@ color: #000;
 height: 50px;
 padding-top: 15px;
 background-color: #FFF;
+border-bottom: 1px solid #ddd;
 }
 
 .headerlinks{
@@ -77,19 +78,23 @@ display: block;
 }
 
 .fieldgroup .fields {
-margin: 10px 0 0 0;
 padding: 15px;
 background-image: -webkit-gradient(
 	linear,
 	left bottom,
 	left top,
-	color-stop(0.45, #FFF),
-	color-stop(0.73, #F3F3F3)
+	color-stop(0.3, #FFF),
+	color-stop(0.70, #F9F9F9)
 );
 
-border: 1px solid #EEE;
-border-bottom: 1px solid #F3FFF3;
+
+border: 1px solid #DDD;
+box-shadow: 2px 2px 10px 10px #f9f9f9;
+border-bottom: 2px solid #EEE;
+border-radius: 15px;
 }
+
+
 
 .fields .names input {
 width: 200px;

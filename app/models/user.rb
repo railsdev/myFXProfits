@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname, :lastname, :paid, :trial, :registered, :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token
+  attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname, :lastname, :paid, :trial, :registered, 
+  :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token
 
 	has_secure_password
 	before_save { self.email.downcase! }

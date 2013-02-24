@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_filter :session_exists, :only => [:edit, :paypal]
+
   def new
   	if signed_in?
 	  redirect_to '/'
@@ -12,6 +14,10 @@ class UsersController < ApplicationController
     end
   @user = User.find_by_email(params[:email])
   end
+
+  def edit 
+    @user = current_user
+  end
   
   def paypal
     @user = current_user 
@@ -23,7 +29,7 @@ class UsersController < ApplicationController
         :return_url =>  confirmpayment_url,
         :cancel_url =>  root_url
         )
-end
+  end
 
   def confirm 
     @user = current_user
@@ -36,8 +42,8 @@ end
         @user.paypal_payment_token  = params[:token]
         @user.registered = true
       end
-      logger.debug(@user.paypal_customer_token)
-      logger.debug(@user.paypal_payment_token )
+    logger.debug(@user.paypal_customer_token)
+    logger.debug(@user.paypal_payment_token )
     @user.save!
   end
 
@@ -50,9 +56,11 @@ end
           redirect_to paypal_checkout_path
        else
        redirect_to '/'
-     end
+       end
+
     else  
     render 'new'
     end
   end
+
 end
