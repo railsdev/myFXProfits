@@ -2,32 +2,52 @@
 <html>
 
   <head>
-    <script src="assets/javascriptss/jquery.js"></script>
+    
+    <!-- Bootstrap Scripts -->
     <script src="bootstrap/javascripts/bootstrap-alert.js"></script>
-    <script src="bootstrap/javascripts/bootstarp-modal.js"></script>
+    <script src="bootstrap/javascripts/bootstrap-affix.js"></script>
+    <script src="bootstrap/javascripts/bootstarp-button.js"></script>
+    <script src="bootstrap/javascripts/bootstrap-carousel.js"></script>
+    <script src="bootstrap/javascrips/bootstrap-collapse.js"></script>
+    <script src="bootstrap/javascripts/bootstarp-dropdown.js"></script>
+    <script src="bootstrap/javascripts/bootstrap-modal.js"></script>
+    <script src="bootstrap/javascripts/bootstrap-popover.js"></script>
+    <script src="bootstrap/javascrips/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/javascripts/bootstrap-tab.js"></script>
+    <script src="bootstrap/javascripts/bootstarp-tooltip.js"></script>
     <script src="bootstrap/javascripts/bootstrap-transition.js"></script>
-    <script src="bootstrap/javascrips/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/javascrips/bootstrap-typeahead.js"></script>
+
+    <!-- Bootstrap CSS -->
     <link href="assets/stylesheets/bootstrap.css" rel="stylesheet">
     <link href="assets/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Icon -->
     <link rel="shortcut icon" href="./../assets/money.jpg"/>
 
     <title>MyFX-Profits</title>
-      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%= stylesheet_link_tag "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
-      <%= csrf_meta_tags %>
+      <%= csrf_meta_tag %>
+      
+      <!-- Header -->
       <% if !signed_in? %>
-      <%= render 'layouts/header' %>
+        <%= render 'layouts/header' %>
       <% else %>
-      <%= render 'layouts/headerSign' %>
+        <%= render 'layouts/headerSign' %>
       <% end %>
+
   </head>
+  
   <body>
     <br>
     <%= yield %>
     <br>
   </body>
 
-   <% if !signed_in? %>
+  <!-- Footer -->
+    <% if !signed_in? %>
       <%= render 'layouts/footer' %>
     <% end %>
+
 </html>

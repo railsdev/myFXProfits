@@ -9,8 +9,8 @@ Tradesite::Application.routes.draw do
   resources :password_resets
 
   #Root
- # root                      to: 'pages#home'
-  root                      to: 'users#new'
+  root                      to: 'pages#home'
+
   #Pages
   match '/about',           to: 'pages#about'
   
@@ -19,7 +19,8 @@ Tradesite::Application.routes.draw do
   match '/updateplan',      to: 'users#paypal'
   match '/paypal/checkout', to: 'users#paypal_checkout'
   match '/confirmpayment',  to: 'users#confirm'
-  match '/account',         to: 'users#edit'
+  match '/account',         to: 'users#account'
+  match '/edit',            to: 'users#edit'
 
   #Sessions Pages
   match '/login',           to: 'sessions#new'

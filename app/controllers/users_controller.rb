@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-before_filter :session_exists, :only => [:edit, :paypal]
+before_filter :session_exists, :only => [:edit, :paypal, :account]
+
 
   def new
   	if signed_in?
@@ -18,7 +19,20 @@ before_filter :session_exists, :only => [:edit, :paypal]
   def edit 
     @user = current_user
   end
-  
+
+  def account 
+    @user = current_user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to @user, notice: "Successfully updated user."
+    else
+      render :edit
+    end
+  end
+
   def paypal
     @user = current_user 
   end
@@ -34,10 +48,6 @@ before_filter :session_exists, :only => [:edit, :paypal]
   def confirm 
     @user = current_user
     if params[:PayerID]
-      logger.debug("USER HERE")
-      logger.debug(@user)
-      logger.debug(params[:PayerID])
-      logger.debug(params[:token])
         @user.paypal_customer_token = params[:PayerID]
         @user.paypal_payment_token  = params[:token]
         @user.registered = true
@@ -57,7 +67,6 @@ before_filter :session_exists, :only => [:edit, :paypal]
        else
        redirect_to '/'
        end
-
     else  
     render 'new'
     end

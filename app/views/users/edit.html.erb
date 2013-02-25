@@ -1,1 +1,19 @@
-<h1> <%= @user.name %>'s account page </h1>
+
+<%= form_for(@user) do |f| %>
+
+		<h3 class = "formtext">Sign Up</h3>
+			<span class = "names">
+				<%= f.text_field :firstname, :placeholder => "First Name"%>
+				<%= f.text_field :lastname, :placeholder => "Last Name"%>
+			</span>
+				<br>
+				<%= f.text_field :name, :placeholder => "Username"%>
+				<br>
+				<%= f.text_field :email, :placeholder => "Email" %>
+				<br>
+				<%= f.password_field :password, :placeholder => "Password" %>
+				<br>
+				<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+				<br>
+				<%= f.submit "Update Profile", class: "btn btn-large btn-success right", style: "width: 220px;"%>		
+		<% end %>

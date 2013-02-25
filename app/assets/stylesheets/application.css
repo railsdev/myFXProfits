@@ -45,15 +45,17 @@ color: #000;
 }
 
 .header-container { 
-height: 50px;
-padding-top: 15px;
+height: 70px;
 background-color: #FFF;
 border-bottom: 1px solid #ddd;
 }
 
-.headerlinks{
-	padding-left: 10px;
-	padding-right: 10px;
+.headerlinks {
+	height: 70px;
+	padding: 15px;
+}
+.headerlinkscontainer {
+	padding-top: 15px;
 }
 
 .headerlinks:hover{
@@ -117,12 +119,6 @@ width: 417px;
 }
 .header a { 
 font-color: #555;
-}
-.heading {
-
-	font-family: ProximaNovaRgRegular, "Helvetica Neue", Helvetica, sans-serif;
-	font-weight: normal;
-	font-color: #555;
 }
 .page-switcher {
   -webkit-transition: width 150ms, right 150ms, background-color 150ms;

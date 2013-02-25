@@ -1,52 +1,43 @@
 <div class="header-container">    
   <div class = "container clearfix">
-    <span class = "logo left">
-        <a href = "/signup">
-     <span style = "font-size: 70%;">MY</span>FX<span style = "font-size: 70%;">PROFITS</span>
-        </a>
-    </span>
-    <h5 class = "left" style = "display: inline; padding-left: 20px; ">
-     <div class="dropdown headerlinks" style = "display: inline;">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#">About</a>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    <a href="#" >Trading Room</a>
-  </ul>
-</div>
-
-     <a href = '/' class = "headerlinks"> Plans</a>
-     <a href = '/' class = "headerlinks"> Videos</a>
-     <a href = '/' class = "headerlinks"> Trading Room</a>
-     <!-- Modal -->
-<div id="signin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="signinLabel">Sign In</h3>
-  </div>
-  <div class="modal-body">
-
-                <%= form_for(:session, url: sessions_path) do |f| %>
-                <h6>Email or Username</h6>
-                    <%= f.text_field :email, :placeholder => "Insert Email Here"%>
-                <h6>Password <a href = '/reset' >(Forgot Password?)</a></h6>
-                    <%= f.password_field :password, :placeholder => "Password"%>
-                        <br>
-
-                    
-                    
-              
-  </div>
-  <div class="modal-footer">
-    <button class="btn left" data-dismiss="modal" aria-hidden="true">Close</button>
-    <%= f.submit "Sign In!", class: "btn btn-success right"%>
-      <% end %>
-  </div>
-</div>
-    </h5>
-        <!-- Button to trigger Sign In -->
-    <a style = "margin-top: 2px;" href="#signin" role="button" class="btn right" data-toggle="modal">Sign In</a>
     
+      <a href = "/signup" class = "left"><img src = "./../assets/logo.png"/></a>
 
-    </span>
+      <!-- Links to various Pages -->
+      <h5 class = "headerlinkscontainer left" style = "display: inline; padding-left: 20px; ">
+      <a href="/about"  class = "headerlinks">About</a>
+      <a href = '/'    class = "headerlinks"> Plans</a>
+      <a href = '/'    class = "headerlinks"> Videos</a>
+      <a href = '/'    class = "headerlinks"> Trading Room</a></h5>
+              
+      <!-- Button to trigger Sign In -->
+      <h5 style = "padding-top: 10px;"><a style = "width: 75px;" href="#signin" role="button" class="btn right" data-toggle="modal">Sign In</a></h5>
+      
+
+      <!-- Modal -->
+
+    <div id="signin" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signinLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="signinLabel">Sign In</h3>
+      </div>
+
+      <div class="modal-body">
+
+        <%= form_for(:session, url: sessions_path) do |f| %>
+        <h6>Email or Username</h6>
+        <%= f.text_field :email, :placeholder => "Insert Email Here"%>
+        <h6>Password <a href = '/reset' >(Forgot Password?)</a></h6>
+        <%= f.password_field :password, :placeholder => "Password"%>
+        <br>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn left" data-dismiss="modal" aria-hidden="true">Close</button>
+        <%= f.submit "Sign In!", class: "btn btn-success right"%>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

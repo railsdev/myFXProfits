@@ -34,6 +34,9 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (~> 3.1)
     better_errors (0.6.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -216,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (= 2.5.0)
   bcrypt-ruby (= 3.0.1)
+  best_in_place
   better_errors
   binding_of_caller
   bootstrap-sass (= 2.1)

@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
+gem 'best_in_place'
 
 
 group :development, :test do
