@@ -124,3 +124,35 @@ font-color: #555;
 	font-weight: normal;
 	font-color: #555;
 }
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };
+}
+
+.editCell {
+	width: 400px;
+	height: 60px;
+}
+.editInput {
+padding:5px;
+}
+
+.editInput input{
+width: 200px;
+height: 100%;
+font-size: 2em;
+}
+
+.editInput:hover {
+color: #dd4814;;
+}
+
+.editInput:active {
+}
