@@ -5984,7 +5984,7 @@ a.badge:focus {
   -webkit-transition: 0.3s ease-in-out left;
      -moz-transition: 0.3s ease-in-out left;
        -o-transition: 0.3s ease-in-out left;
-          transition: 0.3onclick = "switch()"carous ease-in-out left;
+          transition: 0.3s ease-in-out left;
 }
 
 .carousel-inner > .item > img,

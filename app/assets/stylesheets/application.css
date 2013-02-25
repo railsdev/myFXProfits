@@ -120,18 +120,7 @@ width: 417px;
 .header a { 
 font-color: #555;
 }
-.page-switcher {
-  -webkit-transition: width 150ms, right 150ms, background-color 150ms;
-  background-color: transparent;
-  border: none;
-  bottom: 0;
-  font-size: 40px;
-  margin: 0;
-  max-width: 150px;
-  min-width: 90px;
-  outline: none;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  z-index: 5;
+.heading {
+	font-weight: normal;
+	font-color: #555;
 }
