@@ -806,9 +806,8 @@ h4 small {
 }
 
 .page-header {
-  padding-bottom: 9px;
-  margin: 20px 0 30px;
-  border-bottom: 1px solid #f5f5f5;
+  margin: 20px 0 15px;
+  border-bottom: 2px solid #f1f1f1;
 }
 
 ul,

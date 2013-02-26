@@ -6,20 +6,27 @@
 		</h5> 
 	</div>
 	
-	<table class = "table-bordered">
+	<table class = "table-bordered" style = "width: 100%;">
+	
 		<td class = "editCell">
-			<b>Name:</b>	
-			<span class = "editInput">
-				
-			<%= best_in_place @user, :name %>
+		
+			<h5 style = "display: inline; padding-left: 10px;">Name: </h5>
+			
+			<span class = "editInput">		
+				<%= best_in_place @user, :name %>
 			</span>
-		</td>
+		
+		s</td>
 
 		<td class = "editCell">
-			<b>Email:</b> 
+		
+			<h5 style = "display: inline; padding-left: 10px;">Email:</h5> 
+		
 			<span class = "editInput"> 
-			<%= best_in_place @user, :email %>
+				<%= best_in_place @user, :email %>
 			</span>
+		
 		</td>
+	
 	<table>
 </div>
