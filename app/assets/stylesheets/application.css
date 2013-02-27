@@ -120,10 +120,6 @@ width: 417px;
 .header a { 
 font-color: #555;
 }
-.heading {
-	font-weight: normal;
-	color: #994814;;
-}
 
 .purr {
   position: fixed;
@@ -136,23 +132,3 @@ font-color: #555;
   &:first-letter { text-transform: uppercase };
 }
 
-.editCell {
-	width: 400px;
-	height: 60px;
-}
-.editInput {
-padding:5px;
-}
-
-.editInput input{
-width: 200px;
-height: 100%;
-font-size: 2em;
-}
-
-.editInput:hover {
-color: #dd4814;;
-}
-
-.editInput:active {
-}

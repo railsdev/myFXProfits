@@ -38,3 +38,39 @@ form {
 	font-weight: normal;
 	color: #774814;;
 }
+
+.editCell {
+	
+	width: 400px;
+	height: 60px;
+}
+
+.editInput {
+padding: 10px;
+height: 20px;
+font-size: 20px;
+border-top: solid 1px #e9e9e9;
+}
+
+.editInput input{
+height: 18px;
+font-size: 15px;
+width: 95%;
+}
+
+.editInput:hover {
+color: #dd4814;
+background-color: #F1F1F1;
+}
+
+.heading {
+	font-weight: normal;
+	color: #994814;
+}
+
+.edit { 
+color: #991448;
+float: right;
+height: 15px;
+width: auto;
+}

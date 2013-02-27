@@ -1,31 +1,64 @@
+
+<script type="text/javascript">
+    $(function () {
+    	//Personal
+    	$('#editfirst').tooltip({ trigger: "hover", placement: "left" });
+    	$('#editname').tooltip({ trigger: "hover", placement: "left" });
+    	$('#editlast').tooltip({ trigger: "hover", placement: "left" });
+
+    	// Contact
+    	$('#editemail').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editnumber').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editcountry').tooltip({ trigger: "hover", placement: "right" });
+    });
+</script>
+
 <div class = "container">
 	<div class = "page-header"> 
-		<h1> Account Info </h1>
-		<h5 class = "heading" style = "color: #999;">
-			Here you can view and edit your account information
+		<table>
+			<td>
+		<h1 class = "heading"> Account Info </h1> 
+		<h5 class = "heading">
+			Here you can view and edit your account information 
 		</h5> 
+		</td>
+			<td>
+		 <img style = "height: 100px; width: auto;" src = "./../assets/avatar.png"/>
+		</td>
+	</table>
 	</div>
 	
-	<table class = "table-bordered" style = "width: 100%;">
+	<table class = "table-bordered">
 	
 		<td class = "editCell">
-		
-			<h5 style = "display: inline; padding-left: 10px;">Name: </h5>
+
+			<h3> Personal </h3> 
+			<div class = "editInput" id="editname" href="#" data-toggle="tooltip" data-original-title="Edit User Name">	
+				<%= best_in_place @user, :name, :activator => "#editname" %>
+			</div>
+			<div class = "editInput" id="editfirst" href="#" data-toggle="tooltip" data-original-title="Edit First Name"> 
+				<%= best_in_place @user, :firstname , :activator => "#editfirst" %>
+			</div>
+			<div class = "editInput"  id="editlast" href="#" data-toggle="tooltip" data-original-title="Edit Last Name">	
+				<%= best_in_place @user, :lastname , :activator => "#editlast" %>
+			</div>
 			
-			<span class = "editInput">		
-				<%= best_in_place @user, :name %>
-			</span>
-		
 		</td>
 
+
+
 		<td class = "editCell">
-		
-			<h5 style = "display: inline; padding-left: 10px;">Email:</h5> 
-		
-			<span class = "editInput"> 
-				<%= best_in_place @user, :email %>
-			</span>
-		
+			<h3> Contact Info </h3>
+			<div class = "editInput" id="editemail" href="#" data-toggle="tooltip" data-original-title="Edit Your Email">	
+				<%= best_in_place @user, :email, :activator => "#editemail" %>
+			</div>
+
+			<div class = "editInput" id="editnumber" href="#" data-toggle="tooltip" data-original-title="Edit Your Phone Number">	
+				<%= best_in_place @user, :number, :activator => "#editnumber" %>
+			</div>
+			<div class = "editInput" id="editcountry" href="#" data-toggle="tooltip" data-original-title="Edit Your Location">	
+			
+			</div>
 		</td>
 	
 	<table>
