@@ -3,12 +3,16 @@ about.png: about-7bed407ff5ae1bf43efb7cf34479f017.png
 about/index.png: about-7bed407ff5ae1bf43efb7cf34479f017.png
 alerts.png: alerts-fc0e8eab6d73cd5fd625e4f193398698.png
 alerts/index.png: alerts-fc0e8eab6d73cd5fd625e4f193398698.png
+avatar.png: avatar-edb7d72b5b9f8da801efea0d83f49503.png
+avatar/index.png: avatar-edb7d72b5b9f8da801efea0d83f49503.png
 bg-light.jpg: bg-light-44f43e8585bd7bb022b99c365bb8aecc.jpg
 bg-light/index.jpg: bg-light-44f43e8585bd7bb022b99c365bb8aecc.jpg
 bg.jpg: bg-19af195f9c773fe0c0145872f2f81b61.jpg
 bg/index.jpg: bg-19af195f9c773fe0c0145872f2f81b61.jpg
 call.png: call-2596f43094b2a4cd600caa489357b884.png
 call/index.png: call-2596f43094b2a4cd600caa489357b884.png
+edit.png: edit-730dfd058c34190af374603529f9774e.png
+edit/index.png: edit-730dfd058c34190af374603529f9774e.png
 logo.png: logo-3a100f2784645a1dfeb4de980fd3ca3e.png
 logo/index.png: logo-3a100f2784645a1dfeb4de980fd3ca3e.png
 ribbon.png: ribbon-b35fe27c23e34a57668434243764f240.png
@@ -17,8 +21,8 @@ video.png: video-09cd3822401c3496909b431d7a3c91e9.png
 video/index.png: video-09cd3822401c3496909b431d7a3c91e9.png
 application.js: application-0c1cf3f90d7f8d0fdacd0a5c26f0595c.js
 application/index.js: application-0c1cf3f90d7f8d0fdacd0a5c26f0595c.js
-application.css: application-fdd174fa712ec78c5a58cbd52ea24b7f.css
-application/index.css: application-fdd174fa712ec78c5a58cbd52ea24b7f.css
+application.css: application-73c5ad1668fd6e431c54589a17974ad9.css
+application/index.css: application-73c5ad1668fd6e431c54589a17974ad9.css
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
