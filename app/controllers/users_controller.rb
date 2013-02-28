@@ -19,11 +19,6 @@ respond_to :html, :json
   def edit 
     @user = current_user
   end
-
-  def account 
-    @user = current_user
-    @user.save!
-  end
   
   def show 
     @user = User.find(params[:id])

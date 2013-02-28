@@ -45,12 +45,7 @@ function switchInfo(idNum)
 		<table>
 		<td>
 
-			<%= form_for @user, :html => { :multipart => true } do |form| %>
-
-			<label class="filebutton" id="editpic" href="#" data-toggle="tooltip" data-original-title="Update Avatar">
-			<%= image_tag @user.avatar.url(:thumb), style: "width: 100px; height: auto; border: solid 1px #FAFAFA; border-radius: 5px;"%>
-			<span><input id="user_avatar" name="user[avatar]" type="file" ></span>
-			</label>
+			
 
 
 		</td>
@@ -132,8 +127,7 @@ function switchInfo(idNum)
 	</table>
 
 	<h5>  
-		<%= form.submit "Save Avatar", class: 'btn', style: "float: left;", id: "avatarbutton"%>
-		<% end %>
+		
 	</h5>
 		
 </div>
