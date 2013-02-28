@@ -1,17 +1,139 @@
 
-<%= form_for(@user) do |f| %>
-			<span class = "names">
-				<%= f.text_field :firstname, :placeholder => "First Name"%>
-				<%= f.text_field :lastname, :placeholder => "Last Name"%>
-			</span>
-				<br>
-				<%= f.text_field :name, :placeholder => "Username"%>
-				<br>
-				<%= f.text_field :email, :placeholder => "Email" %>
-				<br>
-				<%= f.password_field :password, :placeholder => "Password" %>
-				<br>
-				<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
-				<br>
-				<%= f.submit "Update Profile", class: "btn btn-large btn-success left", style: "width: 220px;"%>		
+<script type="text/javascript">
+    $(function () {
+		$('#editpic').tooltip({ trigger: "hover", placement: "left" });
+
+   /* 
+		CODE NOT BEING USED
+   		//Personal
+    	$('#editfirst').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editname').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editlast').tooltip({ trigger: "hover", placement: "right" });
+
+    	// Contact
+    	$('#editemail').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editnumber').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editcountry').tooltip({ trigger: "hover", placement: "right" }); 
+
+    	$('#avatarbutton').width( $('#personal').width() + 50);
+
+    	*/
+    });
+function switchInfo(idNum)
+		{
+			
+			if(idNum == 1){
+				$('#personal').hide()
+				$('#Personaltitle').hide()
+				$('#personalButton').hide()
+				$('#billing').show()
+				$('#billingButton').show()
+			}
+			if(idNum == 2){
+				$('#personal').show()
+				$('#Personaltitle').show()
+				$('#personalButton').show()
+				$('#billing').hide()
+				$('#billingButton').hide()
+			}	
+		}
+</script>
+
+<div class = "container" id = "container">
+
+	<div class = "page-header"> 
+		<table>
+		<td>
+
+			<%= form_for @user, :html => { :multipart => true } do |form| %>
+
+			<label class="filebutton" id="editpic" href="#" data-toggle="tooltip" data-original-title="Update Avatar">
+			<%= image_tag @user.avatar.url(:thumb), style: "width: 100px; height: auto; border: solid 1px #FAFAFA; border-radius: 5px;"%>
+			<span><input id="user_avatar" name="user[avatar]" type="file" ></span>
+			</label>
+
+
+		</td>
+		<td>
+		<h1 class = "heading"> Account Info </h1> 
+			<h5 class = "heading">
+			Here you can view and edit your account information 
+			</h5> 
+		</td>
+			
+		</table>
+	</div>
+		<a href = "#" id = "personalButton" onclick = "switchInfo(1)">Edit Billing Information?</a>
+		<a href ="#" id = "billingButton" onclick = "switchInfo(2)"  style = "display: none;">Edit Personal Information?</a>
+
+	<table id = "billing" style = "display: none;">
+			<td class = "right">
+				<h3> Billing Information </h3>
+				<div class = "arrowdiv">
+					Full Plan 	
+				</div>
+				<% if @user.registered? %>
+				<h4> You are registered for a paid account  </h4>
+				<% else %>
+				<h4> You are registered for a free account </h4>
+				<% end %>
+			</td>
+	</table>
+	
+	<table id = "personal">
+			
+			<h3 id = "Personaltitle"> Personal Information </h3>
+			<td>
+			<div class = "arrowdiv">
+			User Name <img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+			<div class = "arrowdiv">
+			First Name<img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+			<div class = "arrowdiv">
+			Last Name<img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+			<div class = "arrowdiv">
+			Email<img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+			<div class = "arrowdiv">
+			Phone Number &nbsp;<img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+			<div class = "arrowdiv">
+			Location <img src = "./../assets/arrow.png" class = "arrow">
+			</div>
+		</td>
+
+		<td class = "editCell">
+		
+			<div class = "editInput" id="editname" href="#" data-toggle="tooltip" data-original-title="Edit User Name">	
+				<%= best_in_place @user, :name, :activator => "#editname" %>
+			</div>
+			<div class = "editInput" id="editfirst" href="#" data-toggle="tooltip" data-original-title="Edit First Name"> 
+				<%= best_in_place @user, :firstname , :activator => "#editfirst" %>
+			</div>
+			<div class = "editInput"  id="editlast" href="#" data-toggle="tooltip" data-original-title="Edit Last Name">	
+				<%= best_in_place @user, :lastname , :activator => "#editlast" %>
+			</div>
+			<div class = "editInput" id="editemail" href="#" data-toggle="tooltip" data-original-title="Edit Email">	
+				<%= best_in_place @user, :email, :activator => "#editemail" %>
+			</div>
+
+			<div class = "editInput" id="editnumber" href="#" data-toggle="tooltip" data-original-title="Edit Phone Number">	
+				<%= best_in_place @user, :number, :activator => "#editnumber"  %>
+			</div>
+			<div class = "editInput" id="editcountry" href="#" data-toggle="tooltip" data-original-title="Edit Location">	
+			
+			</div>
+		</td>
+
+	
+	
+	</table>
+
+	<h5>  
+		<%= form.submit "Save Avatar", class: 'btn', style: "float: left;", id: "avatarbutton"%>
 		<% end %>
+	</h5>
+		
+</div>

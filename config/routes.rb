@@ -20,8 +20,7 @@ Tradesite::Application.routes.draw do
   match '/updateplan',      to: 'users#paypal'
   match '/paypal/checkout', to: 'users#paypal_checkout'
   match '/confirmpayment',  to: 'users#confirm'
-  match '/account',         to: 'users#account'
-  match '/edit',            to: 'users#edit'
+  match '/account',            to: 'users#edit'
 
   #Sessions Pages
   match '/login',           to: 'sessions#new'

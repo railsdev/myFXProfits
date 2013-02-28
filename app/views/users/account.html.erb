@@ -2,9 +2,9 @@
 <script type="text/javascript">
     $(function () {
     	//Personal
-    	$('#editfirst').tooltip({ trigger: "hover", placement: "left" });
-    	$('#editname').tooltip({ trigger: "hover", placement: "left" });
-    	$('#editlast').tooltip({ trigger: "hover", placement: "left" });
+    	$('#editfirst').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editname').tooltip({ trigger: "hover", placement: "right" });
+    	$('#editlast').tooltip({ trigger: "hover", placement: "right" });
 
     	// Contact
     	$('#editemail').tooltip({ trigger: "hover", placement: "right" });
@@ -24,7 +24,7 @@
 		</td>
 			<td>
 
-			<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+			<%= form_for @user, :html => { :multipart => true } do |form| %>
 			<%= form.file_field :avatar %>
 			<%= form.submit "Update Avatar", class: "btn"%>
 			<% end %>
@@ -36,8 +36,6 @@
 	<table class = "table-bordered">
 	
 		<td class = "editCell">
-
-			<h3> Personal </h3> 
 			<div class = "editInput" id="editname" href="#" data-toggle="tooltip" data-original-title="Edit User Name">	
 				<%= best_in_place @user, :name, :activator => "#editname" %>
 			</div>
@@ -47,13 +45,6 @@
 			<div class = "editInput"  id="editlast" href="#" data-toggle="tooltip" data-original-title="Edit Last Name">	
 				<%= best_in_place @user, :lastname , :activator => "#editlast" %>
 			</div>
-			
-		</td>
-
-
-
-		<td class = "editCell">
-			<h3> Contact Info </h3>
 			<div class = "editInput" id="editemail" href="#" data-toggle="tooltip" data-original-title="Edit Your Email">	
 				<%= best_in_place @user, :email, :activator => "#editemail" %>
 			</div>
@@ -65,6 +56,6 @@
 			
 			</div>
 		</td>
-	
+
 	<table>
 </div>
