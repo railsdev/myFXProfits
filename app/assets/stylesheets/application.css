@@ -80,23 +80,6 @@ div {
 display: block;
 }
 
-.fieldgroup .fields {
-padding: 15px;
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.3, #FFF),
-	color-stop(0.70, #F9F9F9)
-);
-
-
-border: 1px solid #DDD;
-box-shadow: 2px 2px 10px 10px #f9f9f9;
-border-bottom: 2px solid #EEE;
-border-radius: 6px;
-}
-
 
 
 .fields .names input {

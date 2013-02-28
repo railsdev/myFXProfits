@@ -9,8 +9,8 @@ bg-light.jpg: bg-light-44f43e8585bd7bb022b99c365bb8aecc.jpg
 bg-light/index.jpg: bg-light-44f43e8585bd7bb022b99c365bb8aecc.jpg
 bg.jpg: bg-19af195f9c773fe0c0145872f2f81b61.jpg
 bg/index.jpg: bg-19af195f9c773fe0c0145872f2f81b61.jpg
-call.png: call-2596f43094b2a4cd600caa489357b884.png
-call/index.png: call-2596f43094b2a4cd600caa489357b884.png
+call.png: call-d507fa7635fa27e1d8945d98e3b3441f.png
+call/index.png: call-d507fa7635fa27e1d8945d98e3b3441f.png
 edit.png: edit-730dfd058c34190af374603529f9774e.png
 edit/index.png: edit-730dfd058c34190af374603529f9774e.png
 logo.png: logo-3a100f2784645a1dfeb4de980fd3ca3e.png
@@ -21,8 +21,8 @@ video.png: video-09cd3822401c3496909b431d7a3c91e9.png
 video/index.png: video-09cd3822401c3496909b431d7a3c91e9.png
 application.js: application-0c1cf3f90d7f8d0fdacd0a5c26f0595c.js
 application/index.js: application-0c1cf3f90d7f8d0fdacd0a5c26f0595c.js
-application.css: application-73c5ad1668fd6e431c54589a17974ad9.css
-application/index.css: application-73c5ad1668fd6e431c54589a17974ad9.css
+application.css: application-718da787f749a2c7ee8f342ab63024c9.css
+application/index.css: application-718da787f749a2c7ee8f342ab63024c9.css
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings-white/index.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
 glyphicons-halflings.png: glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png

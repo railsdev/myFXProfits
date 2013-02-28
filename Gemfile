@@ -6,7 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
 gem 'best_in_place'
-
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 
 group :development, :test do

@@ -22,6 +22,7 @@ respond_to :html, :json
 
   def account 
     @user = current_user
+    @user.save!
   end
   
   def show 
