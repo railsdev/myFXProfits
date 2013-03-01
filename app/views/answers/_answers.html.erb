@@ -1,0 +1,6 @@
+<h1> Answers for Post number <%= Post.first.id %> </h1>
+
+<% answers.each do |answer| %>
+  <%= render partial: "answers/answer", object: answer %>
+<% end %>
+

@@ -1,11 +1,18 @@
-<div class = "container">
+<script type = "text/javascript">
+  $(".comment-btn").onclick = loadComments;
+  function loadComments() {
+    $("#answer-column").empty()
+    $("#answer-column").append(<%= render partial: "answers/answers", object: Post.last.answers  %>)
+  }
+</script>
+<div class = "container" >
 	<table>
 
-		<td style = "width: 470px; 	border-right: 1px solid #DDD;">
+		<td style = "width: 470px; 	border-right: 1px solid #DDD;" id="post-container">
 			<%= render @posts %>
 		</td>
-		<td style = "width: 470px;">
-			<h1> &nbsp; Answers Go Here </h1>
+		<td style = "width: 470px;" id="answer-column">
+			 <%= render partial: "answers/answers", object: Post.first.answers  %>
 		</td>
 	</table>
 
