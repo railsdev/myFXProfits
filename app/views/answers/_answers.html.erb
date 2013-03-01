@@ -1,5 +1,8 @@
-<h1> Answers for Post number <%= Post.first.id %> </h1>
-
+<% if answers.class == Array and !answers.first.nil? %>
+  <h1> Answers for Post number <%= answers.first.user.id %> </h1>
+<% else %>
+  <h1> No answers yet </h1>
+<% end %>
 <% answers.each do |answer| %>
   <%= render partial: "answers/answer", object: answer %>
 <% end %>

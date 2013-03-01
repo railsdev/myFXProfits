@@ -5,7 +5,7 @@
 	<span class = "post-content">
 		<%= post.body %>
 	</span>
-    <button style = "float:right;"class="comment-btn">Comments</button>
+    <button class="comment-btn" onclick=loadComments(<%= post.id %>) ><Comments></button>
 
 </div>
 
