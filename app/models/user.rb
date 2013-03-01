@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	#, :default_url => "./../assets/avatar.png"
 	
 	has_many :posts
+	has_many :answers
 	
 	
 	validates :password, presence:true , length: {minimum: 5, maximum: 20}, :on => :create

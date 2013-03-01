@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-	attr_accessible :content, :user_id
-	validates :content, presence: :true
-  has_man
+	has_many :answers
+	attr_accessible :body, :user_id
+	validates :body, presence: :true
 end

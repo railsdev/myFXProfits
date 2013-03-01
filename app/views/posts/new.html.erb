@@ -1,12 +1,8 @@
 <div class = "container">
+  <h3 class = "formtext">Post a question?</h3>
+    <%= form_for(@post) do |f| %>
+      <%= f.text_field :body, :placeholder => "Whats on your mind?"%>
 
-		<h3 class = "formtext">Post a question?</h3>
-				<%= form_for(@post) do |f| %>
-				<%= f.text_field :content, :placeholder => "Whats on your mind?"%>
-			
-				<%= f.submit "Post", class: "btn btn-large btn-success right", style: "width: 220px;"%>
-				<% end %>
-
-				
-
+      <%= f.submit "Post", class: "btn btn-large btn-success right", style: "width: 220px;"%>
+    <% end %>
 </div>

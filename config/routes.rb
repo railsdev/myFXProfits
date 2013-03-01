@@ -1,5 +1,9 @@
 Tradesite::Application.routes.draw do
 
+  get "answers/new"
+
+  get "replies/new"
+
   get "posts/new"
 
   get "password_resets/new"
