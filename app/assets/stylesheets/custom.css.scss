@@ -143,14 +143,12 @@ border-radius: 5px;
 
 }
 .post-content {
-	position:relative;
-	padding:15px;
-	width: 30%;
-	text-align:center;
-	color:#fff;
-	background:#333; 
-	/* css3 */
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-		border-radius:10px;
+position: relative;
+padding: 10px;
+width: 80%; height: auto;
+border: 1px solid #FAFAFA;
+background-color: #EEE;
+text-align: left;
+color: #333;
+border-radius: 6px;
 }
