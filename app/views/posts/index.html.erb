@@ -1,4 +1,3 @@
-<script src="../assets/javascripts/jquery.js"></script>
 <script type = "text/javascript">
   function loadComments(id) {
     $.ajax({
@@ -19,5 +18,14 @@
     <%= render @posts %>
   </div>
 </div>
-<div class = "container" id="answer-column">
+<div class = "container" >
+	<table>
+
+		<td style = "width: 470px; 	border-right: 1px solid #DDD;" id="post-container">
+			<%= render @posts %>
+		</td>
+		<td style = "width: 470px;" id="answer-column">
+		</td>
+	</table>
+
 </div>

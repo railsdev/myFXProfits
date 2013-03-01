@@ -6,4 +6,13 @@
 <% answers["answers"].each do |answer| %>
   <%= render partial: "answers/answer", object: answer %>
 <% end %>
+	<%= form_for(:answer, url: answers_path) do |f| %>
+	<h6>Post a Comment or an Answer</h6>
+
+      <%= f.text_field :body, :placeholder => "Whats on your mind?"%>
+
+      <%= f.submit "Post", class: "btn btn-large btn-success right", style: "width: 220px;"%>
+
+    <% end %>
+
 

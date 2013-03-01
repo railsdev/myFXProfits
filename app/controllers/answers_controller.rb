@@ -9,8 +9,8 @@ class AnswersController < ApplicationController
   	def create
   	@user = current_user
     @answer = Answer.new(params[:answer])
-   	@post.user_id = @user.id
-	    if @post.save
+   	@answer.user_id = @user.id
+	    if @answer.save
 	       redirect_to '/posts'
 	  	 
 		else 
@@ -21,4 +21,12 @@ class AnswersController < ApplicationController
 	def index
 		@posts = Post.all
 	end
+
+	def retrieve
+    @post = Post.find(params["id"])
+    data = {}
+    data["answers"] = @post.answers
+    data["post_id"] = @post.id
+    render partial: "answers/answers", object: data
+  end
 end

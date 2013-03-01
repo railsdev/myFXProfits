@@ -21,11 +21,5 @@ class PostsController < ApplicationController
 	def index
 		@posts = Post.all
 	end
-  def retrieve
-    @post = Post.find(params["id"])
-    data = {}
-    data["answers"] = @post.answers
-    data["post_id"] = @post.id
-    render partial: "answers/answers", object: data
-  end
+
 end
