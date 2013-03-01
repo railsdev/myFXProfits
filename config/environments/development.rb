@@ -28,10 +28,7 @@ Tradesite::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.compress = false  
-  config.assets.compile = false
-  config.assets.digest = true
-  config.assets.manifest = Rails.root.join("public/assets")
-  config.assets.debug = true
-
+  config.assets.compress = true 
+  config.assets.compile = true
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 end

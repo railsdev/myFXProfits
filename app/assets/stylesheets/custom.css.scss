@@ -130,3 +130,129 @@ border-top: solid 1px #e9e9e9;
 	padding-left: 150px;
 	float: right;
 }
+
+.thumb { 
+width: 100px; 
+height: auto; 
+border: solid 1px #FAFAFA; 
+border-radius: 5px;
+}
+
+.container { 
+width: 920px;
+margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.right { 
+float: right;
+}
+
+.left { 
+float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.logo { 
+font-size: 40px;
+padding: 5px;
+font-weight: bold;
+}
+
+.formtext{ 
+color: #000;
+}
+
+.header-container { 
+height: 70px;
+background-color: #FFF;
+border-bottom: 1px solid #ddd;
+}
+
+.headerlinks {
+	height: 70px;
+	padding: 15px;
+}
+.headerlinkscontainer {
+	padding-top: 15px;
+}
+
+.headerlinks:hover{
+	font-weight: bold;
+}
+
+.footer-container {
+width: 100%; 
+border-top:1px solid #ddd; 
+padding: 15px;
+height: 50px;
+background-color: #FFF;
+
+}
+
+.fieldgroup {
+position: relative;
+margin-top: 10px;
+}
+
+div {
+display: block;
+}
+
+
+
+.fields .names input {
+width: 200px;
+}
+
+.fields input {
+width: 417px;
+}
+
+.HomePageCol1{
+
+	width: 465px;
+}
+
+.HomePageCol2 {
+	padding-left: 20px; 
+	width: 465px; 
+	padding-bottom: 100px;
+}
+.header a { 
+font-color: #555;
+}
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };
+}
+.post {
+	
+	width: 50%;
+
+}
+.post-content {
+	position:relative;
+	padding:15px;
+	width: 30%;
+	text-align:center;
+	color:#fff;
+	background:#333; 
+	/* css3 */
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+		border-radius:10px;
+}

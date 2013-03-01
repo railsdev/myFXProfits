@@ -44,11 +44,16 @@ function switchInfo(idNum)
 	<div class = "page-header"> 
 		<table>
 		<td>
+			 <% if @user.errors.any? %>
+         <div class = "alert">
+            <%= @user.errors.full_messages[0] %>
+         </div>
+    <% end %>
 
 			<%= form_for @user, :html => { :multipart => true } do |form| %>
 
 			<label class="filebutton" id="editpic" href="#" data-toggle="tooltip" data-original-title="Update Avatar">
-			<%= image_tag @user.avatar.url(:thumb), style: "width: 100px; height: auto; border: solid 1px #FAFAFA; border-radius: 5px;"%>
+			<%= image_tag @user.avatar.url(:thumb), class: "thumb"%>
 			<span><input id="user_avatar" name="user[avatar]" type="file" ></span>
 			</label>
 

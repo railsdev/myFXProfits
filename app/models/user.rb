@@ -2,21 +2,35 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname, :lastname, :paid, :trial, :registered, 
   :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token, :number, :avatar
 
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "./../assets/avatar.png"
+	has_attached_file :avatar, 
+	:styles => { :medium => "300x300>", :thumb => "100x100>" }
+	#, :default_url => "./../assets/avatar.png"
 	
-	has_secure_password
-	before_save { self.email.downcase! }
-	before_save :create_remember_token
+	has_many :posts
+	
 	
 	validates :password, presence:true , length: {minimum: 5, maximum: 20}, :on => :create
 	validates :password_confirmation, presence: true, :on => :create
 
-	validates :name, presence: true, uniqueness:  { case_sensitive: false }
-	validates :firstname, presence: true
-	validates :lastname, presence: true
+	validates :name, 
+	:presence =>  {:message => "User name cant be blank"},
+	uniqueness: {:message => "User name already taken", case_sensitive: false }
+
+	validates :firstname,
+	:presence => {:message => "First name cant be blank"}
+
+	validates :lastname,
+	:presence => {:message => "Last name cant be blank"}
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness:  { case_sensitive: false }
+	validates :email, :presence => {:message => "Email can't be blank"},
+	format: { with: VALID_EMAIL_REGEX, :message => "Invalid Email" },
+	uniqueness: {:message => "Email already taken", case_sensitive: false }
+	has_secure_password
+	before_save { self.email.downcase! }
+	before_save :create_remember_token
+
+
 
 	def password_change
 	    save!
