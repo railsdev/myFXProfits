@@ -1,6 +1,18 @@
-<div class = "container">
-	<div class = "posts" >
-<%= render @posts %>
-	</div>
-
+<script src="../assets/javascripts/jquery.js"></script>
+<script type = "text/javascript">
+  $(".comment-btn").onclick = loadComments;
+  function loadComments() {
+    $("#answer-column").empty()
+    $("#answer-column").append(<%= render partial: "answers/answers", object: Post.last.answers  %>)
+  }
+</script>
+<div class = "container" id="post-container">
+  <div class = "posts" >
+    <%= render @posts %>
+  </div>
+</div>
+<div class = "container" id="answer-column">
+  <div class = "posts" >
+    <%= render partial: "answers/answers", object: Post.first.answers  %>
+  </div>
 </div>
