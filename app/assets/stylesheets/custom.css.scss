@@ -139,15 +139,29 @@ border-radius: 5px;
 }
 .post {
 	
-	width: 50%;
+	width: 100%;
+
 
 }
+
 .post-content {
+margin-bottom: 20px;
 position: relative;
 padding: 10px;
 width: 80%; height: auto;
 border: 1px solid #FAFAFA;
 background-color: #EEE;
+text-align: left;
+color: #333;
+border-radius: 6px;
+}
+
+.post-content:hover {
+position: relative;
+padding: 10px;
+width: 80%; height: auto;
+border: 1px solid #FAFAFA;
+background-color: #AAA;
 text-align: left;
 color: #333;
 border-radius: 6px;
