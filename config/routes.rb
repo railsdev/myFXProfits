@@ -14,6 +14,7 @@ Tradesite::Application.routes.draw do
   resources :sessions
   resources :password_resets
   resources :posts
+  resources :answers
 
   #Root
   root                      to: 'pages#home'
@@ -39,7 +40,9 @@ Tradesite::Application.routes.draw do
   #Posts 
   match '/posts/new',       to: 'posts#new'
   match '/posts',           to: 'posts#index'
-  match '/retrieve_answers',  to: 'posts#retrieve'
+
+  #Answers
+  match '/retrieve_answers',  to: 'answers#retrieve'
   
 
   # The priority is based upon order of creation:

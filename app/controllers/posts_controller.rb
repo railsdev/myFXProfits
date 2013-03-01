@@ -22,8 +22,5 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 	
-	def retrieve
-		@post = Post.find(params["id"])
-		render partial: "answers/answers", object: @post.answers
-	end
+	
 end
