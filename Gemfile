@@ -7,6 +7,7 @@ gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
 gem 'best_in_place'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 
 
 group :development, :test do

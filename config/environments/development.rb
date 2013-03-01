@@ -29,7 +29,6 @@ Tradesite::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.assets.compress = false  
-  config.assets.precompile += %w[bootstrap-alerts.js] #Lots of other space separated files
   config.assets.compile = false
   config.assets.digest = true
   config.assets.manifest = Rails.root.join("public/assets")
