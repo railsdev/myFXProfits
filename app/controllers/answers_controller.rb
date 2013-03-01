@@ -6,10 +6,11 @@ class AnswersController < ApplicationController
 		@answer = Answer.new
 	end
 
-  	def create
+  def create
   	@user = current_user
     @answer = Answer.new(params[:answer])
    	@answer.user_id = @user.id
+    @answer.post_id = params["post_id"]
 	    if @answer.save
 	       redirect_to '/posts'
 	  	 
