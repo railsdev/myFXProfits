@@ -23,6 +23,9 @@ class PostsController < ApplicationController
 	end
   def retrieve
     @post = Post.find(params["id"])
-    render partial: "answers/answers", object: @post.answers
+    data = {}
+    data["answers"] = @post.answers
+    data["post_id"] = @post.id
+    render partial: "answers/answers", object: data
   end
 end
