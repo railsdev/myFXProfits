@@ -28,10 +28,11 @@ Tradesite::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # Do not compress assets
-  config.assets.compress = false
-
-  # Expands the lines which load the assets
+  config.assets.compress = false  
+  config.assets.precompile += %w[bootstrap-alerts.js] #Lots of other space separated files
+  config.assets.compile = false
+  config.assets.digest = true
+  config.assets.manifest = Rails.root.join("public/assets")
   config.assets.debug = true
 
 end
