@@ -39,6 +39,7 @@ Tradesite::Application.routes.draw do
   #Posts 
   match '/posts/new',       to: 'posts#new'
   match '/posts',           to: 'posts#index'
+  match '/retrieve_answers',  to: 'posts#retrieve'
   
 
   # The priority is based upon order of creation:

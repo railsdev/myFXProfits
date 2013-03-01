@@ -1,10 +1,20 @@
 <script src="../assets/javascripts/jquery.js"></script>
 <script type = "text/javascript">
-  $(".comment-btn").onclick = loadComments;
-  function loadComments() {
-    $("#answer-column").empty()
-    $("#answer-column").append(<%= render partial: "answers/answers", object: Post.last.answers  %>)
-  }
+  function loadComments(id) {
+    alert("ME")
+    $.ajax({
+      url: "/retrieve_answers",
+      type: "GET",
+      data: 'id='+id,
+      success: function(resp) {
+        $("#answer-column").empty()
+        $("#answer-column").append(resp)
+        alert("worked")
+        
+      },
+
+    }) 
+  };
 </script>
 <div class = "container" id="post-container">
   <div class = "posts" >

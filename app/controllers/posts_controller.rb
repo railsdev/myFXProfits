@@ -6,12 +6,12 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-  	def create
+  def create
   	@user = current_user
     @post = Post.new(params[:post])
    	@post.user_id = @user.id
-	    if @post.save
-	       redirect_to '/posts'
+	  if @post.save
+	    redirect_to '/posts'
 	  	 
 		else 
 			redirect_to '/posts/new'
@@ -21,4 +21,8 @@ class PostsController < ApplicationController
 	def index
 		@posts = Post.all
 	end
+  def retrieve
+    @post = Post.find(params["id"])
+    render partial: "answers/answers", object: @post.answers
+  end
 end
