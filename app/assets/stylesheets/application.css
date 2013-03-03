@@ -52,11 +52,19 @@ border-bottom: 1px solid #ddd;
 
 .headerlinks {
 	height: 70px;
-	padding: 15px;
+  padding: 5px;
+  margin-right: 5px;
+	margin-left: 5px;
+  padding-bottom: 25px;
+  padding-top: 25px;
 }
 .headerlinksActive {
   height: 70px;
-  padding: 15px;
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-bottom: 25px;
+  padding-top: 25px;
   border-bottom: 3px solid #991448;
 
 }

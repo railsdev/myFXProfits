@@ -7,13 +7,12 @@
      </h1>
       <!-- Links to various Pages -->
       <h5 class = "headerlinkscontainer left" style = "display: inline; padding-left: 20px; ">
-      <a href="/about"  class = "headerlinks">About</a>
-      <a href = '/disclaimer'    class = "headerlinks"> Risk Disclaimer</a>
-      <a href = '/'    class = "headerlinks"> Videos</a>
-      <a href = '/'    class = "headerlinks"> Trading Room</a></h5>
+      <a href="/about"  class = <%= yield(:about) %>>About</a>
+      <a href = '/disclaimer'    class = <%= yield(:disclaimer) %>>Disclaimer</a>
+      <a href = '/plans'    class = <%= yield(:plans) %>>Plans</a>
               
       <!-- Button to trigger Sign In -->
-      <h5 style = "padding-top: 10px;"><a style = "width: 75px;" href="#signin" role="button" class="btn right" data-toggle="modal">Sign In</a></h5>
+      <h5 style = "padding-top: 10px;"><a href="#signin" role="button" class="btn right" data-toggle="modal">Sign In</a></h5>
       
 
       <!-- Modal -->

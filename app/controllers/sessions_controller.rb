@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
   def destroy
     self.current_user = nil
     cookies.delete(:trading_token)
-    redirect_to '/login'
+    redirect_to '/signup'
   end
 end

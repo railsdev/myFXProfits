@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   	def session_exists
 	    logger.debug(signed_in?)
 	    if !signed_in?
-	      redirect_to "/login"
+	      redirect_to "/signup"
 	    end
 	end
 
