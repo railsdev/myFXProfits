@@ -1,11 +1,17 @@
-<div class = "post">
-	
-	<img src = <%= post.user.avatar %> class = "thumb" >
+<div class = "post"  onclick=loadComments(<%= post.id %>) style = "border: 1px solid #EEE; border-radius: 5px; padding-bottom: 50px;" >
+	<table style = "width: 100%;">
+		<td style = "width: 50px; vertical-align:top">
+	<img src = <%= post.user.avatar %> class = "thumbIndex" > 
+</td>
+<td>
+
+	<h5 class = "heading" style = "display:inline;"><%= post.user.name %> posted
+	<%= time_ago_in_words(post.created_at)%> ago
+	</h5>
 	<br>
-	<span class = "post-content">
 		<%= post.body %>
-	</span>
-    <button class="comment-btn" onclick=loadComments(<%= post.id %>) ><Comments></button>
+	<br>
+</td>
 
+</table>
 </div>
-

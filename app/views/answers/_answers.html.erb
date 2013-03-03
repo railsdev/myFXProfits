@@ -1,18 +1,17 @@
 <% if !answers["post_id"].nil? %>
-  <h1> Answers for Post number <%= answers["post_id"] %> </h1>
+  <h5> Replies for <% @post = Post.find_by_id(answers["post_id"]) %> <%= @post.user.name %>'s post </h5>
 <% else %>
-  <h1> No answers yet </h1>
+  <h5> This post has no replies </h5>
 <% end %>
 <% answers["answers"].each do |answer| %>
   <%= render partial: "answers/answer", object: answer %>
 <% end %>
 	<%= form_for(:answer, url: answers_path) do |f| %>
-	<h6>Post a Comment or an Answer</h6>
 
-      <%= f.text_field :body, :placeholder => "Whats on your mind?"%>
+      <%= f.text_field :body, :placeholder => "Reply to this post"%>
       <%= hidden_field_tag 'post_id', answers["post_id"]  %>
-
-      <%= f.submit "Post", class: "btn btn-large btn-success right", style: "width: 220px;"%>
+      <br>
+      <%= f.submit "Reply", class: "btn", style: "display:inline;"%>
 
     <% end %>
 

@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 gem "mail", "2.4.4"
 gem 'rails', '3.2.11'
-gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
 gem 'best_in_place'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
+gem 'time-ago-in-words'
 
 
 group :development, :test do
@@ -33,6 +33,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '3.2.5'
+  gem 'bootstrap-sass', '2.3'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
 end

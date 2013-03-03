@@ -1,11 +1,10 @@
-//Body 
+
+ 
 
 body { 
 background-color: #FAFAFA;
 margin-bottom: 100px;
 }
-
-//Links
 
 a:link { text-decoration:none; font-color: #000; }
 a:visited { text-decoration:line-through; }
@@ -23,7 +22,6 @@ a{ color: #010; }
 .heading a { 
 color: #555;
 }
-//Heading Overrides
 
 h3{ 
 padding: 0px;
@@ -134,15 +132,24 @@ border-top: solid 1px #e9e9e9;
 .thumb { 
 width: 100px; 
 height: auto; 
-border: solid 1px #FAFAFA; 
+border: solid 1px #EEE; 
 border-radius: 5px;
 }
 
-.post {
-	
+.thumbIndex {
+	height: 50px; 
+	width: auto;
+	border: solid 1px #EEE; 
+	border-radius: 5px;
+}
+
+.post {	
 	width: 100%;
+	background-color: #EEE;
+}
 
-
+.post:hover {
+	background-color: #AAA;
 }
 
 .post-content {
@@ -151,13 +158,9 @@ position: relative;
 padding: 10px;
 width: 400px; 
 height: auto;
-border: 1px solid #FAFAFA;
 background-color: #EEE;
 text-align: left;
 color: #333;
 border-radius: 6px;
 }
 
-.post-content:hover {
-background-color: #AAA;
-}
