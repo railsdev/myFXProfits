@@ -1,5 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Ubuntu);
-
+@import url('//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic');
 /*!
  * Bootstrap v2.3.0
  *
@@ -225,7 +224,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -742,7 +741,7 @@ h5,
 h6 {
   margin: 10px 0;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility;
@@ -973,7 +972,7 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 12px;
   color: #333333;
   -webkit-border-radius: 3px;
@@ -1066,7 +1065,7 @@ input,
 button,
 select,
 textarea {
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
 }
 
 label {
@@ -3283,7 +3282,7 @@ button.close {
 
 .btn-large {
   padding: 11px 19px;
-  font-size: 17.5px;
+  font-size: 16px;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -4511,7 +4510,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: 'Ubuntu', Tahoma, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;

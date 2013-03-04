@@ -14,7 +14,8 @@
   };
 </script>
 <div class = "container" >
-	<table>
+   
+	<table style = "border-bottom: 2px solid #EEE">
 
 		<td style = "width: 470px; 	border-right: 1px solid #DDD; vertical-align:top" id="post-container">
 			<%= render @posts %>
@@ -22,5 +23,12 @@
 		<td style = "width: 470px; vertical-align:top" id="answer-column">
 		</td>
 	</table>
+  <br>
+ <%= form_for(:post, url: posts_path) do |f| %>
+      <% @user = current_user %>
+      <%= f.text_area :body, :placeholder => "Post a question or a message to the other users, #{@user.name}", style: "height: 75px; width: 40%;"%>
+      <br>
+      <%= f.submit "Post", class: "btn", style: "display:inline;"%>
 
+    <% end %>
 </div>
