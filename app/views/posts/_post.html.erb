@@ -1,17 +1,46 @@
-<div class = "post"  onclick=loadComments(<%= post.id %>) style = "border: 1px solid #EEE; border-radius: 5px; padding-bottom: 50px;" >
-	<table style = "width: 100%;">
-		<td style = "width: 50px; vertical-align:top">
-	<img src = <%= post.user.avatar %> class = "thumbIndex" > 
-</td>
-<td>
+<script>
+	function deletePost(id){
+		window.location = '/deletePost/?id=' + id
+	}
+    $(function () {
+		$('#delete').tooltip({ trigger: "hover", placement: "left" });
+    });
+</script>
 
-	<h5 class = "heading" style = "display:inline;"><%= post.user.name %> posted
-	<%= time_ago_in_words(post.created_at)%> ago
-	</h5>
-	<br>
-		<%= post.body %>
-	<br>
-</td>
+<% for post in @posts %>
 
-</table>
-</div>
+	<div class = "post" style = "padding-bottom: 50px;" >
+			<table style = "width: 100%;">
+
+				<td style = "width: 50px; vertical-align:top">
+					<img src = <%= post.user.avatar %> class = "thumbIndex" >
+				</td>
+
+				<td>
+						<!-- Post Made by and time ago -->
+						<h5 class = "heading" style = "display:inline;">
+							<%= post.user.name %> posted
+							<%= time_ago_in_words(post.created_at)%> ago
+
+							<!-- Delete Button -->
+							<% @user = current_user %>
+							<% if post.user_id = @user.id %>
+								<p id = "delete" class = "pull-right delete" style = "padding-left: 10px; display:inline;" onclick = "deletePost(<%=post.id%>)" data-toggle="tooltip" data-original-title="Delete Post"> X </p>
+							<% end %>
+
+						</h5>
+
+						<!-- Post Content -->
+						<br>
+							<%= post.body %>
+						<br>
+
+				</td>
+
+			</table>
+		<a class = "viewComments" onclick=loadComments(<%= post.id %>) > View Comments </a>
+	</div>
+
+<% end %>
+
+<%= paginate @posts %>

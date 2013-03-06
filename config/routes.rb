@@ -23,28 +23,29 @@ Tradesite::Application.routes.draw do
   match '/about',           to: 'pages#about'
   match '/disclaimer',      to: 'pages#disclaimer'
   match '/plans',           to: 'pages#plans'
-  
+
   #Users Pages
   match '/signup',          to: 'users#new'
   match '/updateplan',      to: 'users#paypal'
   match '/paypal/checkout', to: 'users#paypal_checkout'
   match '/confirmpayment',  to: 'users#confirm'
-  match '/account',            to: 'users#edit'
+  match '/account',         to: 'users#edit'
 
   #Sessions Pages
   match '/login',           to: 'sessions#new'
   match '/logout',          to: 'sessions#destroy'
 
-  #Password Resets 
+  #Password Resets
   match '/reset',           to: 'password_resets#new'
 
-  #Posts 
+  #Posts
   match '/posts/new',       to: 'posts#new'
   match '/posts',           to: 'posts#index'
+  match '/deletePost',      to: 'posts#deletePost'
 
   #Answers
   match '/retrieve_answers',  to: 'answers#retrieve'
-  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

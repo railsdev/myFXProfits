@@ -8,6 +8,9 @@ gem 'best_in_place'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'time-ago-in-words'
+gem 'twilio-ruby'
+gem 'will_paginate'
+gem 'kaminari'
 
 
 group :development, :test do

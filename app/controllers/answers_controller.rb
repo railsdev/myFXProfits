@@ -13,8 +13,8 @@ class AnswersController < ApplicationController
     @answer.post_id = params["post_id"]
 	    if @answer.save
 	       redirect_to '/posts'
-	  	 
-		else 
+
+		else
 			redirect_to '/posts/new'
 		end
 	end

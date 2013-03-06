@@ -1,7 +1,7 @@
 
- 
 
-body { 
+
+body {
 background-color: #FAFAFA;
 margin-bottom: 100px;
 }
@@ -19,11 +19,12 @@ a{ color: #010; }
 	width: 60px;
 }
 
-.heading a { 
+.heading a {
 color: #555;
 }
 
-h3{ 
+
+h3{
 padding: 0px;
 margin: 0px;
 }
@@ -38,7 +39,7 @@ form {
 }
 
 .editCell {
-	
+
 	width: 300px;
 	height: 60px;
 	text-overflow: ellipsis;
@@ -46,15 +47,15 @@ form {
 
 .editInput {
 padding: 10px;
-height: 20px;
-font-size: 20px;
+height: 18px;
+font-size: 17px;
 border-top: solid 1px #e9e9e9;
 	text-overflow: ellipsis;
 }
 
 .editInput input{
-height: 18px;
-font-size: 15px;
+height: 15px;
+font-size: 13px;
 width: 95%;
 	text-overflow: ellipsis;
 }
@@ -71,10 +72,10 @@ background-color: #F1F1F1;
 	color: #aa4814;
 }
 
-.edit { 
+.edit {
 color: #991448;
 float: right;
-height: 15px;
+height: 13px;
 width: auto;
 }
 
@@ -82,8 +83,8 @@ width: auto;
 padding: 15px;
 
 border: 1px solid #DDD;
-border-bottom: 2px solid #EEE;
 border-radius: 6px;
+background-color: #FAFAFA;
 }
 
 label.filebutton {
@@ -111,7 +112,7 @@ label span input {
 
 .arrow {
 padding-top: 2px;
-	height: 15px;
+	height: 10px;
 	width: auto;
 	float: right;
 
@@ -119,8 +120,8 @@ padding-top: 2px;
 
 .arrowdiv {
 padding: 10px;
-height: 20px;
-font-size: 20px;
+height: 18px;
+font-size: 17px;
 border-top: solid 1px #e9e9e9;
 }
 
@@ -129,38 +130,34 @@ border-top: solid 1px #e9e9e9;
 	float: right;
 }
 
-.thumb { 
-width: 100px; 
-height: auto; 
-border: solid 1px #EEE; 
+.thumb {
+width: 100px;
+height: auto;
+border: solid 1px #EEE;
 border-radius: 5px;
 }
 
 .thumbIndex {
-	height: 50px; 
+	height: 50px;
 	width: auto;
-	border: solid 1px #EEE; 
+	border: solid 1px #EEE;
 	border-radius: 5px;
 }
 
-.post {	
+.post {
 	width: 100%;
-	background-color: #EEE;
 }
 
 .post:hover {
-	background-color: #AAA;
 }
 
 .post-content {
 margin-bottom: 20px;
 position: relative;
 padding: 10px;
-width: 400px; 
+width: 400px;
 height: auto;
-background-color: #EEE;
 text-align: left;
 color: #333;
-border-radius: 6px;
 }
 

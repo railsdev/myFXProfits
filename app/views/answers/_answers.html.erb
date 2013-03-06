@@ -1,5 +1,5 @@
 <% if !answers["post_id"].nil? %>
-  <h5> Replies for <% @post = Post.find_by_id(answers["post_id"]) %> 
+  <h5> Replies for <% @post = Post.find_by_id(answers["post_id"]) %>
   <%= @post.user.name %>'s post </h5>
 <% else %>
   <h5> This post has no replies </h5>

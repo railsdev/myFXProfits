@@ -1,3 +1,7 @@
+<% provide(:account, "headerlinks") %>
+<% provide(:messageboard, "headerlinksActive") %>
+<% provide(:other, "headerlinks") %>
+
 <script type = "text/javascript">
   function loadComments(id) {
     $.ajax({
@@ -7,28 +11,36 @@
       success: function(resp) {
         $("#answer-column").empty()
         $("#answer-column").append(resp)
-        
+
       },
 
-    }) 
+    })
   };
 </script>
+
 <div class = "container" >
-   
+
 	<table style = "border-bottom: 2px solid #EEE">
 
 		<td style = "width: 470px; 	border-right: 1px solid #DDD; vertical-align:top" id="post-container">
-			<%= render @posts %>
+
+      <%= render '/posts/post' %>
+
 		</td>
 		<td style = "width: 470px; vertical-align:top" id="answer-column">
-		</td>
+
+      <!-- Comments/Replies to posts render here -->
+
+    </td>
+
 	</table>
   <br>
+<!-- Form to create posts -->
  <%= form_for(:post, url: posts_path) do |f| %>
       <% @user = current_user %>
       <%= f.text_area :body, :placeholder => "Post a question or a message to the other users, #{@user.name}", style: "height: 75px; width: 40%;"%>
       <br>
       <%= f.submit "Post", class: "btn", style: "display:inline;"%>
 
-    <% end %>
+  <% end %>
 </div>
