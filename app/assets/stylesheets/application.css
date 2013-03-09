@@ -118,13 +118,23 @@ font-color: #555;
 }
 
 .purr {
-  position: fixed;
-  top: 30px;
-  right: 100px;
-  width: 250px;
-  padding: 20px;
-  background-color: #FCC;
-  border: solid 2px #666;
+  color: #df382c;
+  padding-top: 10px;
+  background-color: #fadfdd;
+  border-color: #f8d0d4;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #f8d0d4;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  position: absolute;
+  top: 71px;
+  float: left;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+  height: 30px;
   &:first-letter { text-transform: uppercase };
 }
 
@@ -133,8 +143,8 @@ font-color: #555;
 }
 
 .delete:hover {
-  background-color: #FEFEFE;
-  color: #888;
+  background-color: #333;
+  color: #FFF;
   cursor: pointer;
   _cursor: hand;
 }
@@ -155,7 +165,149 @@ font-color: #555;
 }
 
 .viewComments {
-color: #554814;
-font-size: 10px;
-float: left;
+  color: #554814;
+  font-size: 10px;
+  float: left;
 }
+
+.thumb {
+width: 100px;
+height: auto;
+border: solid 1px #EEE;
+border-radius: 5px;
+}
+
+.thumbIndex {
+  height: 50px;
+  width: auto;
+  border: solid 1px #EEE;
+  border-radius: 5px;
+}
+
+
+.post-container {
+  width: 100%;
+
+  border-bottom: 1px solid #DDD;
+}
+
+#answer-column {
+  -webkit-transition: .4s ease-in-out opacity;
+  -moz-transition: .4s ease-in-out opacity;
+  -o-transition: .4s ease-in-out opacity;
+  transition: .4s ease-in-out opacity;
+
+  padding-left: 15px;
+
+}
+
+.postcreate-container {
+  margin-top: 15px;
+  border-bottom: 1px solid #DDD;
+}
+
+
+.post {
+  width: 100%;
+  border-bottom: 1px solid #DDD;
+  padding-top: 10px;
+}
+
+.post:hover {
+  background-color: #F6F6F6;
+}
+
+.post-content {
+margin-bottom: 10px;
+position: relative;
+width: 400px;
+height: auto;
+text-align: left;
+color: #333;
+}
+.submitPost{
+display: none;
+-webkit-transition: 10s ease-in-out opacity;
+  -moz-transition: 10s ease-in-out opacity;
+  -o-transition: 10s ease-in-out opacity;
+  transition: 10s ease-in-out opacity;
+}
+
+.submitPost input {
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+border: 1px solid #bbb;
+border-color: #c8c8c8 #c8c8c8 #a2a2a2;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #a2a2a2;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-repeat: repeat-x;
+border-color: #000 #000 #000;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+.answer {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.thumbAnswer{
+  height: 35px;
+  width: auto;
+  border: solid 1px #EEE;
+  border-radius: 5px;
+}
+
+.answerQuote{
+  position:relative;
+  padding:15px;
+  color:#000;
+  background:#EEE; /* default background for browsers without gradient support */
+  /* css3 */
+
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+.answerQuote.left {
+  margin-left:50px;
+  background:#EEE;
+}
+.answerQuote:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#EEE transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* creates triangle */
+.answerQuote:after {
+  top:15px; /* controls vertical position */
+  left:-25px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:5px 25px 5px 0;
+  border-color:transparent #EEE;
+}
+
+
+

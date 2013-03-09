@@ -1,9 +1,26 @@
-<div class = "answer" >
-	
-	<img src = <%= answer.user.avatar %> class = "thumbIndex" >
-	<h5 style = "display: inline;" class = "heading"> <%= answer.user.name %> </h5>
-	<div class = "post-content">
-		<%= answer.body %>
+<div class = "answer" style = "padding-bottom: 50px;" >
+			<table style = "width: 100%;">
+
+				<td style = "width: 50px; vertical-align:top;">
+					<img src = <%= answer.user.avatar %> class = "thumbAnswer" >
+				</td>
+
+				<td style = "padding-left: 10px;">
+
+
+						<!-- Post Content -->
+						<blockquote class = "answerQuote" >
+							<p style = "font-size: 13px;">
+							<%= answer.body %>
+							<p>
+
+						<small style = "font-size: 10px;">
+							<%= answer.user.name %> replied <%= time_ago_in_words(answer.created_at)%> ago
+						</small>
+						</blockquote>
+
+				</td>
+
+			</table>
 	</div>
 
-</div>

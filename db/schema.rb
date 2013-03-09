@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301201448) do
+ActiveRecord::Schema.define(:version => 20130307214040) do
 
   create_table "answers", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20130301201448) do
     t.string   "password"
     t.string   "password_confirmation"
     t.string   "remember_token"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20130301201448) do
     t.string   "paypal_payment_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.string   "number"
+    t.integer  "number",                 :limit => 255
     t.string   "type"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"

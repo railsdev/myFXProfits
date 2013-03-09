@@ -11,6 +11,9 @@ gem 'time-ago-in-words'
 gem 'twilio-ruby'
 gem 'will_paginate'
 gem 'kaminari'
+gem 'pusher'
+gem 'nifty-generators'
+gem 'sunspot_rails'
 
 
 group :development, :test do

@@ -3,7 +3,7 @@
 <% provide(:disclaimer, "headerlinks") %>
 <% provide(:plans, "headerlinks") %>
 
-<script> 
+<script>
 function switchSubmit()
 {
 if(document.getElementById('user_paid_false').checked){
@@ -13,16 +13,19 @@ if(document.getElementById('user_paid_false').checked){
 if( document.getElementById('user_paid_true').checked){
 	$('#paid').show()
   	$('#free').hide()
-  	}	
+  	}
 }
 
 </script>
+
 <div class = "container">
+
 	 <% if @user.errors.any? %>
          <div class = "alert">
             <%= @user.errors.full_messages[0] %>
          </div>
     <% end %>
+
 <table class = "bordered"  style = "display: inline;">
 	<td class = "HomePageCol1">
 	<div class = "fieldgroup"  style = "display: inline;">
@@ -46,15 +49,15 @@ if( document.getElementById('user_paid_true').checked){
 				<br>
 			<div class="field">
 				<table id = "field">
-				
+
 				<td>
 
-					<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%> 
+					<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%>
 					<%= f.label :paid, "Free Account", :value => false, style: "width: 190px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
 
 					<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
 					<%= f.label :paid, 'Paid Account', :value => true, style: "width: 190px; padding-left: 20px; padding-top: 2px;"%>
-					
+
 				</td>
 
 					<td style = "width: 220px;">
@@ -73,11 +76,12 @@ if( document.getElementById('user_paid_true').checked){
 	</td>
 
 	<td class = "HomePageCol2">
-	 
+
 			<h2 class = "center" style =  "font-weight: normal;">Everything you need to become a successful trader</h2>
 			<h4 class = "heading center">Expert coaching, chatrooms, trade alerts, archived lessons and realtime trading rooms</h4>
 			<h5 class = "center"> 30 Pips And You're Done </h5>
 	</td>
+
 </table>
 
 </div>

@@ -1,4 +1,17 @@
-<% if !answers["post_id"].nil? %>
+<br>
+<script>
+function showSubmitReply()
+{
+  if (document.getElementById('replyArea').value == ""){
+    $('#submitReply').slideUp();
+  }
+  else{
+    $('#submitReply').slideDown();
+  }
+
+}
+</script>
+<% if !answers["answers"][0].nil? %>
   <h5> Replies for <% @post = Post.find_by_id(answers["post_id"]) %>
   <%= @post.user.name %>'s post </h5>
 <% else %>
@@ -7,13 +20,18 @@
 <% answers["answers"].each do |answer| %>
   <%= render partial: "answers/answer", object: answer %>
 <% end %>
+<div style = "margin-top: 15px;">
 	<%= form_for(:answer, url: answers_path) do |f| %>
 
-      <%= f.text_field :body, :placeholder => "Reply to this post"%>
+      <%= f.text_area :body, :placeholder => "Reply to this post", id: "replyArea", onkeyup: "showSubmitReply()", style: "height: 30px; width: 95%;" %>
       <%= hidden_field_tag 'post_id', answers["post_id"]  %>
       <br>
-      <%= f.submit "Reply", class: "btn", style: "display:inline;"%>
+    <span class = "submitPost" id = "submitReply">
+      <%= f.submit "Reply", class: "btn btn-inverse", style: "display:inline;"%>
+    </span>
+
 
     <% end %>
+  </div>
 
 

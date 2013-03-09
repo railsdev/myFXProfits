@@ -9,19 +9,20 @@ respond_to :html, :json
     @user = User.new
   end
 
-  def reset 
+  def reset
     if signed_in?
       redirect_to '/'
     end
   @user = User.find_by_email(params[:email])
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
-  
-  def show 
+
+  def show
     @user = User.find(params[:id])
+        redirect_to '/account'
   end
 
   def update
@@ -37,10 +38,11 @@ respond_to :html, :json
     end
   end
     sign_in @user
+
   end
 
   def paypal
-    @user = current_user 
+    @user = current_user
   end
 
   def paypal_checkout
@@ -51,7 +53,7 @@ respond_to :html, :json
         )
   end
 
-  def confirm 
+  def confirm
     @user = current_user
     if params[:PayerID]
         @user.paypal_customer_token = params[:PayerID]
@@ -73,7 +75,7 @@ respond_to :html, :json
        else
        redirect_to '/'
        end
-    else  
+    else
     render 'new'
     end
   end

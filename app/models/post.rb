@@ -3,4 +3,8 @@ class Post < ActiveRecord::Base
 	has_many :answers
 	attr_accessible :body, :user_id
 	validates :body, presence: :true
+
+	searchable do
+  	text :body
+  end
 end

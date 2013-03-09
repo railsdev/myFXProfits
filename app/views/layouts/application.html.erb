@@ -2,24 +2,30 @@
 <html>
 
   <head>
-    
+
     <!-- Bootstrap Scripts -->
     <script src="./../assets/jquery.js"> </script>
-    <script src="./../assets/bootstrap.js"> </script>                                                                  
+    <script src="./../assets/bootstrap.js"> </script>
+
     <!-- Bootstrap CSS -->
     <link href="./../assets/bootstrap.css" rel="stylesheet">
     <link href="./../assets/bootstrap-responsive.css" rel="stylesheet">
     <link href="./../assets/custom.css.scss" rel="stylesheet">
     <link href="./../assets/application.css" rel="stylesheet">
 
-    <!-- Icon 
+    <!-- Pusher Scripts -->
+    <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+    <script src="pusher-realtime-chat-widget/src/js/PusherChatWidget.js"></script>
+    <link href="pusher-realtime-chat-widget/src/pusher-chat.css" rel="stylesheet" type="text/css" />
+
+    <!-- Icon
    <!--  <link rel="shortcut icon" href="./../assets/money.jpg"/>-->
 
     <title>myfxprofits</title>
       <%= stylesheet_link_tag "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
-      
+
       <!-- Header -->
       <% if !signed_in? %>
         <%= render 'layouts/header' %>
@@ -28,7 +34,7 @@
       <% end %>
 
   </head>
-  
+
   <body>
     <br>
     <%= yield %>
