@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname, :lastname, :paid, :trial, :registered,
   :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token, :phone, :avatar
 
-	has_attached_file :avatar,
-	:styles => { :medium => "300x300>", :thumb => "100x100>" }
+	has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#',	medium: '300x300>'}
 
 	has_many :posts
 	has_many :answers
