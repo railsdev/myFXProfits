@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token, :number, :avatar
 
 	has_attached_file :avatar,
-	:styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "assets/avatar.png"
+	:styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 	has_many :posts
 	has_many :answers

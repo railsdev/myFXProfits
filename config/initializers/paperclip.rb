@@ -1,1 +1,1 @@
-Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
+Paperclip::Attachment.default_options[:url] = 'myfxprofitsAssets.s3.amazonaws.com'

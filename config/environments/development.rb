@@ -31,4 +31,12 @@ Tradesite::Application.configure do
   config.assets.compile = true
   config.assets.debug = true
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+    :bucket => ENV['myfxDev'],
+    :access_key_id => ENV['AKIAJJF2NOP3YBOAJ7HQ'],
+    :secret_access_key => ENV['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']
+    }
+  }
 end

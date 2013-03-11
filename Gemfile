@@ -14,6 +14,7 @@ gem 'kaminari'
 gem 'nifty-generators'
 gem 'sunspot_rails'
 gem "font-awesome-rails"
+gem "rmagick", :require => 'RMagick'
 #gem 'panda', '~> 1.5.0'
 
 
