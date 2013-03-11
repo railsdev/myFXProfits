@@ -69,9 +69,9 @@ Tradesite::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-    :bucket => ENV['myfxprofitsAssets'],
-    :access_key_id => ENV['AKIAJJF2NOP3YBOAJ7HQ'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 end
