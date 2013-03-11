@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname, :lastname, :paid, :trial, :registered,
-  :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token, :number, :avatar
+  :paypal_payment_token, :paypal_recurring_profile_token, :paypal_customer_token, :password_reset_token, :phone, :avatar
 
 	has_attached_file :avatar,
 	:styles => { :medium => "300x300>", :thumb => "100x100>" }
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	validates :password, presence:true , length: {minimum: 5, maximum: 20}, :on => :create
 	validates :password_confirmation, presence: true, :on => :create
 
-	validates :number, uniqueness: {:message => "already taken", case_sensitive: false },
+	validates :phone, uniqueness: {:message => "already taken", case_sensitive: false },
 	:numericality => { :only_integer => true }
 
 	validates :name,

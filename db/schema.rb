@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309225148) do
+ActiveRecord::Schema.define(:version => 20130311213908) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "send_number"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130309225148) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "admin"
+    t.integer  "phone"
   end
 
 end
