@@ -11,8 +11,7 @@ class User < ActiveRecord::Base
 	validates :password, presence:true , length: {minimum: 5, maximum: 20}, :on => :create
 	validates :password_confirmation, presence: true, :on => :create
 
-	validates :phone, uniqueness: {:message => "already taken", case_sensitive: false },
-	:numericality => { :only_integer => true }
+	validates :phone, uniqueness: {:message => "already taken", case_sensitive: false }
 
 	validates :name,
 	:presence =>  {:message => "cant be blank"},
@@ -28,6 +27,7 @@ class User < ActiveRecord::Base
 	validates :email, :presence => {:message => "can't be blank"},
 	format: { with: VALID_EMAIL_REGEX, :message => "Invalid" },
 	uniqueness: {:message => "already taken", case_sensitive: false }
+
 	has_secure_password
 	before_save { self.email.downcase! }
 	before_save :create_remember_token
