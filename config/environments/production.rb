@@ -65,4 +65,13 @@ Tradesite::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
    config.action_mailer.default_url_options = {:host => 'myfxprofits.com'}
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+    :bucket => ENV['myfxprofitsAssets'],
+    :access_key_id => ENV['AKIAJJF2NOP3YBOAJ7HQ'],
+    :secret_access_key => ENV['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']
+    }
+  }
 end

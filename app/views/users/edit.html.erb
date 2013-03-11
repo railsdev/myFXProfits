@@ -1,25 +1,11 @@
-<% provide(:account, "headerlinksActive") %>
-<% provide(:messageboard, "headerlinks") %>
-<% provide(:other, "headerlinks") %>
+<% provide(:account, "headerlinksActiveSign") %>
+<% provide(:messageboard, "headerlinksSign") %>
+<% provide(:other, "headerlinksSign") %>
+<% provide(:videos, "headerlinksSign") %>
+
 <script type="text/javascript">
     $(function () {
 		$('#editpic').tooltip({ trigger: "hover", placement: "left" });
-
-   /*
-		CODE NOT BEING USED
-   		//Personal
-    	$('#editfirst').tooltip({ trigger: "hover", placement: "right" });
-    	$('#editname').tooltip({ trigger: "hover", placement: "right" });
-    	$('#editlast').tooltip({ trigger: "hover", placement: "right" });
-
-    	// Contact
-    	$('#editemail').tooltip({ trigger: "hover", placement: "right" });
-    	$('#editnumber').tooltip({ trigger: "hover", placement: "right" });
-    	$('#editcountry').tooltip({ trigger: "hover", placement: "right" });
-
-    	$('#avatarbutton').width( $('#personal').width() + 50);
-
-    	*/
     });
 
 
@@ -59,6 +45,8 @@
             <%= @user.errors %>
          </div>
    		<% end %>
+
+   		<br>
 
 			<%= form_for @user, :html => { :multipart => true } do |form| %>
 

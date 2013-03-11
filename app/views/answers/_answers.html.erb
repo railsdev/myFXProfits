@@ -23,7 +23,7 @@ function showSubmitReply()
 <div style = "margin-top: 15px;">
 	<%= form_for(:answer, url: answers_path) do |f| %>
 
-      <%= f.text_area :body, :placeholder => "Reply to this post", id: "replyArea", onkeyup: "showSubmitReply()", style: "height: 30px; width: 95%;" %>
+      <%= f.text_area :body, :placeholder => "Reply to this post", id: "replyArea", onkeyup: "showSubmitReply()", style: "height: 30px; width: 95%;  resize: none;" %>
       <%= hidden_field_tag 'post_id', answers["post_id"]  %>
       <br>
     <span class = "submitPost" id = "submitReply">

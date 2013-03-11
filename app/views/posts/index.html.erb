@@ -1,6 +1,7 @@
-<% provide(:account, "headerlinks") %>
-<% provide(:messageboard, "headerlinksActive") %>
-<% provide(:other, "headerlinks") %>
+<% provide(:account, "headerlinksSign") %>
+<% provide(:messageboard, "headerlinksActiveSign") %>
+<% provide(:other, "headerlinksSign") %>
+<% provide(:videos, "headerlinksSign") %>
 
 <script type = "text/javascript">
 
@@ -56,11 +57,6 @@ function showSubmit()
 
 <div class = "container" >
 
-<%= form_tag posts_path, :method => :get do %>
-    <%= text_field_tag :search,  params[:search], :placeholder => "Search the message board" %>
-    <input style = "height: 40px; width: auto; "type = "image"src = "./../assets/search.png" type="submit" value="Search">
-
-<% end %>
 
   <div class = "postcreate-container">
     <!-- Form to create posts -->
@@ -70,7 +66,14 @@ function showSubmit()
         <%= f.text_area :body, :placeholder => "Hey, #{@user.name}, post something", style: "height: 30px; width: 50%;", onkeyup: "showSubmit()", id: "postArea"%>
 
       <div style = "height: 35px;" class = "submitPost" id = "submitPost">
-        <input class="btn btn-inverse btn-large", id = "submitButton" name="commit" type="submit" value="Post It!">
+        <select id="post_postType" name="post[postType]">
+          <option value="Message Type?" selected="selected" disabled="disabled">Message Type?</option>
+          <option value="Question">Question</option>
+          <option value="Alert">Alert</option>
+          <option value="Suggestion">Suggestion</option>
+          <option value="Other">Other</option>
+        </select>
+        <input class="btn btn-inverse btn-large", id = "submitButton" name="commit" type="submit" value="Share">
       </div>
       <div style = "height: 35px;" id = "submitPostHolder">
         <h5 class = "heading" style = "padding: 0px; margin: 0px; display: inline; vert"> You can post a question, a message or just whatever's on your mind </h5>

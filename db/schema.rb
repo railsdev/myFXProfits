@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307214040) do
+ActiveRecord::Schema.define(:version => 20130309225148) do
+
+  create_table "alerts", :force => true do |t|
+    t.integer  "send_number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "twil_number"
+    t.string   "body"
+  end
 
   create_table "answers", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -26,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130307214040) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "body"
+    t.string   "postType"
   end
 
   create_table "sessions", :force => true do |t|
@@ -59,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130307214040) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "admin"
   end
 
 end

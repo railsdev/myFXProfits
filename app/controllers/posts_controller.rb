@@ -10,10 +10,15 @@ class PostsController < ApplicationController
   def create
   	@user = current_user
     @post = Post.new(params[:post])
+
+    if @post.postType.nil?
+    	@post.postType = "Other"
+    end
+
    	@post.user_id = @user.id
+
 	  if @post.save
 	    redirect_to '/posts'
-
 		else
 			redirect_to '/posts/new'
 		end

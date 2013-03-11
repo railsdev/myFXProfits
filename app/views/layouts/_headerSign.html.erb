@@ -1,17 +1,28 @@
-<div class="header-container">    
+<script type="text/javascript">
+    $(function () {
+    $('#logout').tooltip({ trigger: "hover", placement: "bottom" });
+    $('#settings').tooltip({ trigger: "hover", placement: "bottom" });
+    });
+</script>
+
+<div class="header-containerSign">
   <div class = "container clearfix">
-    <h1 class = "left"style = "display: inline;">
-      <a href="/"  class = "headerlinks"><span style = "font-size: 25px;">MY</span>FX<span style = "font-size: 25px;">PROFITS</span></a>
+    <h1 style = "float: left; margin-top: 5px;display: inline;">
+      <a href="/"  class = "heading titleLink"><span style = "color: #333; font-size: 25px;">< MY</span>FX<span style = "color: #333; font-size: 25px;">PROFITS ></span></a>
      </h1>
 
-    <h5 class = "headerlinkscontainer left" style = "display: inline; padding-left: 20px; ">
-     <a href = '/account' class = <%= yield(:account) %>> Account</a>
+    <h5 class = "headerlinkscontainerSign left" style = "display: inline; padding-left: 20px; ">
      <a href = '/posts' class = <%= yield(:messageboard) %>> MessageBoard</a>
-     <a href = '/' class = "headerlinks"> Trading Room</a>
+     <a href = '/videos' class = <%= yield(:videos) %> >Videos</a>
     </h5>
-    
-    <h5 style = "padding-top: 10px;">
-      <a class = "btn right" id = "signin" href="/logout">Sign Out</a>
+
+
+    <h5>
+
+      <a class = "headericons" id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout"> <i class = "icon-signout"></i></a>
+      <a class = "headericons" id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'><i class = "icon-cogs"></i></a>
+      <a class ="headericons" style = "padding-top: 7px; font-weight: bold" href = '#' ><img src = <%= @user.avatar %> class = "thumbHeader" > <%= @user.name %>  </a>
+
     </h5>
   </div>
 </div>

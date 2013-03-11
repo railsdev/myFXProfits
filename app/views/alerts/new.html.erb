@@ -1,0 +1,11 @@
+<div class = "container">
+
+	<%= form_for(:alert, url: alerts_path) do |f| %>
+
+					<%= f.text_area :body, :placeholder => "Message Body" %>
+
+					<%= f.submit "Send", class: "btn" %>
+
+	<% end %>
+
+</div>

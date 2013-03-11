@@ -1,5 +1,9 @@
 Tradesite::Application.routes.draw do
 
+  get "videos/new"
+
+  get "videos/index"
+
   get "answers/new"
 
   get "replies/new"
@@ -15,6 +19,8 @@ Tradesite::Application.routes.draw do
   resources :password_resets
   resources :posts
   resources :answers
+  resources :videos
+  resources :alerts
 
   #Root
   root                      to: 'pages#home'
@@ -44,8 +50,13 @@ Tradesite::Application.routes.draw do
   match '/deletePost',      to: 'posts#deletePost'
 
   #Answers
-  match '/retrieve_answers',  to: 'answers#retrieve'
+  match '/retrieve_answers',to: 'answers#retrieve'
 
+  #Videos
+  match '/videos',          to: 'videos#index'
+
+  #Alerts
+  match '/message',         to: 'alerts#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

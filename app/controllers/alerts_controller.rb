@@ -1,17 +1,43 @@
 class AlertsController < ApplicationController
-	  def send_text_message
-    number_to_send_to = '2267504208'
+  before_filter :session_exists
 
-    twilio_sid = "abc123"
-    twilio_token = "foobar"
-    twilio_phone_number = "6165555555"
 
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+	def new
 
-    @twilio_client.account.sms.messages.create(
-      :from => "+1#{twilio_phone_number}",
-      :to => number_to_send_to,
-      :body => "This is an message. It gets sent to #{number_to_send_to}"
-    )
+    if !@user.admin
+      redirect_to '/posts'
+    end
+
   end
+
+  def create
+
+    #Credentials
+    account_sid = 'ACe258aaabe53da86578b9d53591760950'
+    auth_token = '35455067054ffa37809ce7a5f43e541b'
+
+    #set up a client to talk to the Twilio REST API
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    twil_number = '+12268872873'
+    @users = User.all
+
+    @users.each do |user|
+
+      @client.account.sms.messages.create(
+      :from => twil_number,
+      :to => "+1#{user.number}",
+      :body => params[:alert][:body]
+      )
+
+    end
+
+    if true
+      redirect_to '/message'
+    else
+      render 'new'
+    end
+
+  end
+
 end

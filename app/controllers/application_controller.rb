@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
 	    logger.debug(signed_in?)
 	    if !signed_in?
 	      redirect_to "/signup"
-	    end
+		  else
+	  	@user = current_user
+	  end
 	end
 
 	def registered

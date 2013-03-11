@@ -1,14 +1,15 @@
 class PagesController < ApplicationController
 	before_filter :session_exists, :only => [:home]
-	def home 
+	def home
+		redirect_to '/posts'
 	end
 
-	def about 
+	def about
 	end
 
 	def disclaimer
 	end
 
-	def plans 
+	def plans
 	end
 end

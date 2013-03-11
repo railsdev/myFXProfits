@@ -9,9 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
-
 
 .container {
 width: 920px;
@@ -50,12 +50,51 @@ background-color: #FFF;
 border-bottom: 1px solid #ddd;
 }
 
+
+.header-containerSign {
+height: 50px;
+background-color: #FFF;
+border-bottom: 1px solid #ddd;
+}
+
+
+.titleLink {
+  text-align: center;
+  font-weight: bold;
+  height: 50px;
+  padding: 10px;
+  padding-bottom: 15px;
+  padding-top: 0px;
+
+}
+
+.headerlinksSign {
+  font-weight: normal;
+  height: 50px;
+  padding: 10px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+}
+
+.headerlinksActiveSign {
+  background-color: #333;
+  color: #FFF;
+  font-weight: normal;
+  height: 50px;
+  padding: 10px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #AA4814;
+}
+
+.headerlinkscontainerSign {
+  padding-top: 5px;
+}
+
 .headerlinks {
   font-weight: normal;
 	height: 70px;
   padding: 10px;
-  margin-right: 5px;
-	margin-left: 5px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
@@ -63,8 +102,6 @@ border-bottom: 1px solid #ddd;
   font-weight: normal;
   height: 70px;
   padding: 10px;
-  margin-right: 5px;
-  margin-left: 5px;
   padding-bottom: 25px;
   padding-top: 25px;
   border-bottom: 3px solid #AA4814;
@@ -74,6 +111,14 @@ border-bottom: 1px solid #ddd;
 	padding-top: 15px;
 }
 
+.linkscontainer {
+  width: 900px;
+  height: 68px; position: fixed; top: 70px;
+  text-align: center;
+  background-color: #080808;
+  border: 3px solid #DDD;
+  border-top: 0;
+}
 
 .footer-container {
 width: 100%;
@@ -129,7 +174,8 @@ font-color: #555;
      -moz-border-radius: 4px;
           border-radius: 4px;
   position: absolute;
-  top: 71px;
+  top: 60px;
+  margin-bottom: 10px;
   float: left;
   text-align: center;
   width: 100%;
@@ -234,6 +280,7 @@ display: none;
 }
 
 .submitPost input {
+  float: left;
 display: inline-block;
 padding: 4px 12px;
 margin-bottom: 0;
@@ -258,6 +305,28 @@ text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 background-repeat: repeat-x;
 border-color: #000 #000 #000;
 border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+.submitPost select {
+  margin-left: 10px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+  cursor: pointer;
+  background: #333;
+  width: 125px;
+  font-size: 12px;
+  height: 20px;
+  color: #FFF;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-repeat: repeat-x;
+  border-color: #000 #000 #000;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
 }
 
 .answer {
@@ -309,5 +378,25 @@ border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
   border-color:transparent #EEE;
 }
 
+.headericons i {
+  font-size: 15px;
+  float:right;
+}
 
+.headericons {
+  font-size: 15px;
+  padding: 10px;
+  float:right;
+}
 
+.headerAvatar {
+  padding: 10px;
+  float:right;
+
+}
+.thumbHeader {
+  padding-top: 0px;
+  height: 25px;
+  width: auto;
+  border-radius: 3px;
+}
