@@ -21,7 +21,7 @@
 
       <a class = "headericons" id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout"> <i class = "icon-signout"></i></a>
       <a class = "headericons" id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'><i class = "icon-cogs"></i></a>
-      <a class ="headericons" style = "padding-top: 7px; font-weight: bold" href = '#' ><img src = <%= @user.avatar %> class = "thumbHeader" > <%= @user.name %>  </a>
+      <a class ="headericons" style = "padding-top: 7px; font-weight: bold" href = '#' ><img src = <%= @user.avatar.url(:thumb) %> class = "thumbHeader" > <%= @user.name %>  </a>
 
     </h5>
   </div>
