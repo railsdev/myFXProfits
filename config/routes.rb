@@ -23,12 +23,12 @@ Tradesite::Application.routes.draw do
   resources :alerts
 
   #Root
-  root                      to: 'pages#home'
+  root                      to: 'posts#index'
 
   #Pages
   match '/about',           to: 'pages#about'
   match '/disclaimer',      to: 'pages#disclaimer'
-  match '/plans',           to: 'pages#plans'
+  match '/pricing',           to: 'pages#plans'
 
   #Users Pages
   match '/signup',          to: 'users#new'
@@ -46,7 +46,6 @@ Tradesite::Application.routes.draw do
 
   #Posts
   match '/posts/new',       to: 'posts#new'
-  match '/posts',           to: 'posts#index'
   match '/deletePost',      to: 'posts#deletePost'
 
   #Answers

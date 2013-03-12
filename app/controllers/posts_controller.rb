@@ -3,12 +3,10 @@ class PostsController < ApplicationController
 	require 'kaminari'
 
 	def new
-		@user = current_user
 		@post = Post.new
 	end
 
   def create
-  	@user = current_user
     @post = Post.new(params[:post])
 
     if @post.postType.nil?
