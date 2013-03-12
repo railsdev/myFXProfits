@@ -32,14 +32,4 @@ Tradesite::Application.configure do
   config.assets.debug = true
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
-    config.paperclip_defaults = {
-        :storage => :s3,
-        :s3_credentials => {
-          :bucket => 'myfxprofitsAssets',
-          :access_key_id => 'AKIAJTIRLIMQSVWD5HZQ',
-          :secret_access_key => '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'
-        }
-    }
-
-
 end
