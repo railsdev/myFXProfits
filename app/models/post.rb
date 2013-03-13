@@ -4,7 +4,4 @@ class Post < ActiveRecord::Base
 	attr_accessible :body, :user_id
 	validates :body, presence: :true
 
-	searchable do
-  	text :body
-  end
 end
