@@ -10,7 +10,7 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @original_video = @video.panda_video
-    @h264_encoding = @original_video.encodings["h264"]
+    @h264 = @original_video.encodings["h264"]
   end
 
   def new
