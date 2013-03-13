@@ -23,14 +23,7 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		if params[:search]
-			@search = Post.search do
-			fulltext params[:search]
-			end
-			@posts = @search.results
-		else
 			@posts = Post.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
-		end
 	end
 
 	def deletePost

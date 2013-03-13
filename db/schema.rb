@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311213908) do
+ActiveRecord::Schema.define(:version => 20130313192608) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "send_number"
@@ -70,6 +70,13 @@ ActiveRecord::Schema.define(:version => 20130311213908) do
     t.datetime "avatar_updated_at"
     t.boolean  "admin"
     t.integer  "phone"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "panda_video_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end

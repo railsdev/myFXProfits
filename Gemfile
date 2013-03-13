@@ -42,6 +42,7 @@ group :assets do
   gem 'bootstrap-sass', '2.3'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'

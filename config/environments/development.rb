@@ -31,5 +31,6 @@ Tradesite::Application.configure do
   config.assets.compile = true
   config.assets.debug = true
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  ENV['PANDASTREAM_URL'] = "https://7f13582e2f115bee5713:ae5168330e865d88b2f4@api.pandastream.com/f3bd53ae846f7741fc32f0924d7ccce4"
 
 end

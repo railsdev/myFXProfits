@@ -2,6 +2,6 @@
 <% provide(:messageboard, "headerlinksSign") %>
 <% provide(:other, "headerlinksSign") %>
 <% provide(:videos, "headerlinksActiveSign") %>
-
-<h1>Videos#index</h1>
-<p>Find me in app/views/videos/index.html.erb</p>
+<% @videos.each do |v| %>
+<%= v.panda_video_id %>
+<% end %>
