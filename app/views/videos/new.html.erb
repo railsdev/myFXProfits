@@ -15,7 +15,7 @@
 <% end %>
 
 <script>
-  <% auth_params = Panda.signed_params('post', "/videos.json") , {:path_format => 'Videos/:id'}%>
+   <% auth_params = Panda.signed_params('post', "/videos.json") %>
   jQuery("#returned_video_id").pandaUploader(<%=raw auth_params.to_json %>, {
     upload_progress_id: 'upload_progress'
   });
