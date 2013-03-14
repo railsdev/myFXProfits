@@ -4,14 +4,14 @@ respond_to :html, :json
 
   def new
   	if signed_in?
-	  redirect_to '/'
+	  redirect_to root_path
     end
     @user = User.new
   end
 
   def reset
     if signed_in?
-      redirect_to '/'
+      redirect_to root_path
     end
   @user = User.find_by_email(params[:email])
   end
@@ -22,7 +22,7 @@ respond_to :html, :json
 
   def show
     @user = User.find(params[:id])
-        redirect_to '/account'
+        redirect_to edit_user_path
   end
 
   def update
@@ -71,7 +71,7 @@ respond_to :html, :json
        if @user.paid
           redirect_to paypal_checkout_path
        else
-       redirect_to '/'
+       redirect_to root_path
        end
     else
     render 'new'

@@ -3,16 +3,26 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   	def session_exists
 	    logger.debug(signed_in?)
-	    if !signed_in?
-	      redirect_to "/signup"
+	    if signed_in?
+	    	@user = current_user
+
 		  else
-	  	@user = current_user
+		  	flash[:notice] = "You must be signed to see that content"
+		  	redirect_to new_user_path
 	  end
 	end
 
 	def registered
 		if !@user.registered
-			redirect_to(:back)
+			flash[:notice] = "Nah nigga"
+			redirect_to edit_user_path
+		end
+	end
+
+	def admin_exists
+		if !@user.admin
+			flash[:notice] = "You do not have the privileges to access that page"
+			redirect_to root_path
 		end
 	end
 end

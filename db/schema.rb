@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313192608) do
+ActiveRecord::Schema.define(:version => 20130314135403) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "send_number"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20130313192608) do
     t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
-    t.boolean  "trial"
     t.boolean  "paid"
     t.boolean  "registered"
     t.string   "paypal_customer_token"

@@ -1,10 +1,14 @@
 class VideosController < ApplicationController
   before_filter :session_exists
+  before_filter :admin_exists, :only => [:new]
   require 'kaminari'
   require 'panda'
 
   def index
   	@videos = Video.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
+    @videos.each do |v|
+      v.panda_video = v.panda_video.encodings["h264"]
+    end
   end
 
   def show

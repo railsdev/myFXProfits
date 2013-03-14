@@ -34,6 +34,7 @@
 
   <body>
     <br>
+    <%= render 'shared/flash_messages' if !flash.empty? %>
     <%= yield %>
     <br>
   </body>

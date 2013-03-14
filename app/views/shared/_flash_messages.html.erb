@@ -1,0 +1,13 @@
+<div class = "alert" style = "text-align: center;" id = "flash_messages">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash #{key}") %>
+  <% end %>
+</div>
+
+<script>
+	window.onload = function() {
+    setTimeout(function() {
+        $('#flash_messages').fadeOut(1000);
+    }, 2000);
+}
+</script>

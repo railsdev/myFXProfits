@@ -2,6 +2,7 @@
 <% provide(:messageboard, "headerlinksSign") %>
 <% provide(:other, "headerlinksSign") %>
 <% provide(:videos, "headerlinksActiveSign") %>
-<% @videos.each do |v| %>
-<%= v.panda_video_id %>
-<% end %>
+
+<div class = "container">
+	 <%= render '/videos/video' %>
+</div>

@@ -6,7 +6,6 @@ gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
 gem 'best_in_place'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
 gem 'time-ago-in-words'
 gem 'twilio-ruby'
 gem 'will_paginate'
@@ -15,6 +14,7 @@ gem 'nifty-generators'
 gem "font-awesome-rails"
 gem "rmagick", :require => 'RMagick'
 gem 'panda', '~> 1.5.0'
+gem 'aws-sdk'
 
 
 group :development, :test do
@@ -54,5 +54,4 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-  gem 'aws-sdk'
 end
