@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_filter :session_exists
+	respond_to :html, :json
 	require 'kaminari'
 
 	def new

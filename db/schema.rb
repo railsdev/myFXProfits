@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314135403) do
+ActiveRecord::Schema.define(:version => 20130315200750) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "send_number"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20130314135403) do
     t.datetime "updated_at", :null => false
     t.integer  "post_id"
     t.integer  "user_id"
+    t.string   "body"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "body"
   end
 
@@ -76,6 +82,8 @@ ActiveRecord::Schema.define(:version => 20130314135403) do
     t.string   "panda_video_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "description"
+    t.string   "creationDate"
   end
 
 end

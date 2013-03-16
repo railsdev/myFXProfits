@@ -8,21 +8,31 @@
 <div class="header-containerSign">
   <div class = "container clearfix">
     <h1 style = "float: left; margin-top: 5px;display: inline;">
-      <a href="/"  class = "heading titleLink"><span style = "color: #333; font-size: 25px;">< MY</span>FX<span style = "color: #333; font-size: 25px;">PROFITS ></span></a>
+        <a href="/"  class = "titleLink">
+        <span style = "color: #333; font-size: 25px;">MY</span><span style = "
+text-shadow: 0px 1px 2px #555;">FX</span><span style = "color: #333; font-size: 25px;">PROFITS</span>       </a>
      </h1>
 
-    <h5 class = "headerlinkscontainerSign left" style = "display: inline; padding-left: 20px; ">
-     <a href = '/' class = <%= yield(:messageboard) %>> MessageBoard</a>
-     <a href = '/videos' class = <%= yield(:videos) %> >Videos</a>
-    </h5>
+    <div id = "navcontainer"  style = "">
+      <ul>
+        <li class = <%= yield(:messageboard) %>>  <a href = '/' > MessageBoard</a> </li>
+        <li class = <%= yield(:videos) %> >  <a href = '/videos'>Videos</a>       </li>
+
+        <span class = "right">
+          <li>
+              <a href = '#' ><img src = <%= @user.avatar.url(:thumb) %> class = "thumbHeader" > <%= @user.name %> &nbsp; </a>
+          </li>
+          <li>
+            <a  id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'><i class = "icon-cogs"></i> &nbsp;</a>
+          </li>
+          <li>
+              <a id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout"> <i class = "icon-signout"> &nbsp;</i></a>
+          </li>
+
+        </span>
+      </ul>
+    </div>
 
 
-    <h5>
-
-      <a class = "headericons" id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout"> <i class = "icon-signout"></i></a>
-      <a class = "headericons" id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'><i class = "icon-cogs"></i></a>
-      <a class ="headericons" style = "padding-top: 7px; font-weight: bold" href = '#' ><img src = <%= @user.avatar.url(:thumb) %> class = "thumbHeader" > <%= @user.name %>  </a>
-
-    </h5>
   </div>
 </div>

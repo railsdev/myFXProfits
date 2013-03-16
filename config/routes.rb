@@ -1,18 +1,8 @@
 Tradesite::Application.routes.draw do
 
-  get "videos/new"
-
-  get "videos/index"
-
-  get "answers/new"
-
-  get "replies/new"
-
-  get "posts/new"
-
-  get "password_resets/new"
 
   #Resources
+  resources :chatroom
   resources :users
   resources :pages
   resources :sessions
@@ -53,9 +43,13 @@ Tradesite::Application.routes.draw do
 
   #Videos
   match '/videos',          to: 'videos#index'
+  match '/videos/new',      to: 'videos#new'
 
   #Alerts
   match '/message',         to: 'alerts#new'
+
+  #Chatroom
+  match '/chatroom',        to: 'chatroom#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,3 +1,49 @@
-// Place all the styles related to the videos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$background: #FAFAFA;
+$blue: #0b3e7f;
+$red: #AA4814;
+
+.video{
+  width: 700px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #DDD;
+}
+
+.videoOptions {
+vertical-align: top;
+}
+#videoOptions {
+  width: 175px;
+  float: right;
+  margin-left: 25px;
+  margin-top: 60px;
+  vertical-align: top;
+  border: 1px solid #DDD;
+  border-radius: 6px;
+}
+.videoOptionsHeader {
+padding: 4px 10px;
+margin: 0;
+font-weight: normal;
+color: #FFF;
+font-size: 14px;
+text-align: center;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+-webkit-border-top-left-radius: 6px;
+-webkit-border-top-right-radius: 6px;
+-moz-border-radius-topleft: 6px;
+-moz-border-radius-topright: 6px;
+border: solid 1px #bbb;
+background-color: #333;
+border-bottom: 3px solid $red;
+}
+
+.videoOptionsLinks {
+margin: 10px;
+text-align: center;
+}
+.videoColumn {
+vertical-align: top;
+
+}

@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
 
 	before_update :valid_phone
 
-	before_create :valid_password
-
 	has_secure_password
 
 	before_save { self.email.downcase! }
@@ -29,6 +27,9 @@ class User < ActiveRecord::Base
 
 	validates :lastname,
 	:presence => {:message => "cant be blank"}
+
+	validates :password, :presence => :true, length: {minimum: 5, maximum: 20}, :on => :create
+	validates :password_confirmation, :presence => :true, :on => :create
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -75,11 +76,6 @@ class User < ActiveRecord::Base
 		if !phone.nil?
 			validates :phone, uniqueness: {:message => "already taken", case_sensitive: false }, length: {minimum: 7, maximum: 7}
 		end
-	end
-
-	def valid_password
-		validates :password, :presence, length: {minimum: 5, maximum: 20}
-		validates :password_confirmation, :presence
 	end
 
 end

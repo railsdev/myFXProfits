@@ -1,16 +1,17 @@
-
-
+$background: #FAFAFA;
+$blue: #0b3e7f;
+$red: #AA4814;
 
 body {
-background-color: #FAFAFA;
+background-color: $background;
 margin-bottom: 100px;
 }
 
-a:link { text-decoration:none; font-color: #000; }
+a:link 		{ text-decoration:none; font-color: #000; }
 a:visited { text-decoration:line-through; }
-a:hover { font-color: #040; }
-a:active { }
-a{ color: #010; }
+a:hover 	{ font-color: #040; }
+a:active 	{ }
+a 				{ color: #010; }
 
 .btn:active#signin {
 	color: #999;
@@ -24,7 +25,7 @@ color: #555;
 }
 
 
-h3{
+h3 {
 padding: 0px;
 margin: 0px;
 }
@@ -35,7 +36,7 @@ form {
 
 .heading {
 	font-weight: normal;
-	color: #FF4814;
+	color: $blue;
 }
 
 .editCell {
@@ -46,17 +47,17 @@ form {
 }
 
 .editInput {
-padding: 10px;
-height: 18px;
-font-size: 17px;
-border-top: solid 1px #e9e9e9;
+	padding: 10px;
+	height: 18px;
+	font-size: 17px;
+	border-top: solid 1px #E9E9E9;
 	text-overflow: ellipsis;
 }
 
 .editInput input{
-height: 15px;
-font-size: 13px;
-width: 95%;
+	height: 15px;
+	font-size: 13px;
+	width: 95%;
 	text-overflow: ellipsis;
 }
 
@@ -69,7 +70,7 @@ background-color: #F1F1F1;
 
 .heading {
 	font-weight: normal;
-	color: #aa4814;
+	color: $blue;
 }
 
 .edit {
@@ -81,17 +82,16 @@ width: auto;
 
 .fieldgroup .fields {
 padding: 15px;
-
 border: 1px solid #DDD;
 border-radius: 6px;
-background-color: #FAFAFA;
+background-color: $background;
 }
 
 label.filebutton {
 	width: 100px;
-    overflow:hidden;
-    padding-right: 15px;
-    padding-left: 5px;
+  overflow:hidden;
+  padding-right: 15px;
+  padding-left: 5px;
 }
 
 label span input {

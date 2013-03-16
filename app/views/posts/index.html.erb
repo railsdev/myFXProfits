@@ -24,16 +24,28 @@ function showSubmit()
 
   function loadComments(id) {
     if (previd == 0) {
-    document.getElementById(id).style.borderRight = "5px solid #DDD";
+    document.getElementById(id).style.borderRight = "5px solid #AA4814";
     document.getElementById(id).style.backgroundColor = "#F6F6F6";
+    document.getElementById('commentButton'+id).innerHTML = "Hide Comments";
+    $('#answer-column'+id).show();
      previd = id;
   }
-  else {
-
+  else if (previd == id) {
+    $('#answer-column'+previd).hide();
     document.getElementById(previd).style.borderRight = "0";
     document.getElementById(previd).style.backgroundColor = "#FAFAFA";
-    document.getElementById(id).style.borderRight = "5px solid #DDD";
+    document.getElementById('commentButton'+id).innerHTML = "View Comments";
+    previd = 0;
+  }
+  else {
+    $('#answer-column'+previd).hide();
+    $('#answer-column'+id).show();
+    document.getElementById(previd).style.borderRight = "0";
+    document.getElementById(previd).style.backgroundColor = "#FAFAFA";
+    document.getElementById(id).style.borderRight = "5px solid #AA4814";
     document.getElementById(id).style.backgroundColor = "#F6F6F6";
+    document.getElementById('commentButton'+previd).innerHTML = "View Comments";
+    document.getElementById('commentButton'+id).innerHTML = "Hide Comments";
 
     previd = id;
   }
@@ -44,8 +56,8 @@ function showSubmit()
       type: "GET",
       data: 'id='+id,
       success: function(resp) {
-        $("#answer-column").empty()
-        $("#answer-column").append(resp)
+        $("#answer-column"+id).empty()
+        $("#answer-column"+id).append(resp)
 
       },
 
@@ -66,13 +78,13 @@ function showSubmit()
         <%= f.text_area :body, :placeholder => "Hey, #{@user.name}, post something", style: "height: 30px; width: 50%;", onkeyup: "showSubmit()", id: "postArea"%>
 
       <div style = "height: 35px;" class = "submitPost" id = "submitPost">
-        <select id="post_postType" name="post[postType]">
+        <!--<select id="post_postType" name="post[postType]">
           <option value="Message Type?" selected="selected" disabled="disabled">Message Type?</option>
           <option value="Question">Question</option>
           <option value="Alert">Alert</option>
           <option value="Suggestion">Suggestion</option>
           <option value="Other">Other</option>
-        </select>
+        </select>-->
         <input class="btn btn-inverse btn-large", id = "submitButton" name="commit" type="submit" value="Share">
       </div>
       <div style = "height: 35px;" id = "submitPostHolder">
@@ -85,31 +97,12 @@ function showSubmit()
   </div>
   <div class = "post-container">
 
-  	<table>
-
-  		<td style = "width: 470px; 	border-right: 1px solid #DDD; min-height:1000px;" id="post-container">
+  		<div style = "margin-right: 250px;   min-height:1000px; vertical-align:top;" id="post-container">
         <br>
 
         <%= render '/posts/post' %>
 
-        <br>
-        <br>
-
-        <br>
-        <br>
-
-
-        <br>
-        <br>
-
-  		</td>
-  		<td style = "width: 400px; vertical-align:top" id="answer-column">
-
-        <!-- Comments/Replies to posts render here -->
-
-      </td>
-
-  	</table>
+  		</div>
 
   </div>
 

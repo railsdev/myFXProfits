@@ -1,4 +1,3 @@
-<br>
 <script>
 function showSubmitReply()
 {
@@ -20,7 +19,6 @@ $('form').submit(function() {
         data: valuesToSubmit,
         dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
     }).success(function(json){
-        alert(json);
     });
     $.ajax({
       url: "/retrieve_answers",
@@ -38,26 +36,5 @@ $('form').submit(function() {
 });
 
 </script>
-
-<% if !answers["answers"][0].nil? %>
-<% else %>
-  <h5> This post has no replies </h5>
-<% end %>
-<% answers["answers"].each do |answer| %>
-  <%= render partial: "answers/answer", object: answer %>
-<% end %>
-
-<div>
-	<%= form_for(:answer, url: answers_path) do |f| %>
-
-    <%= f.text_area :body, :placeholder => "Reply to this post", id: "replyArea", onkeyup: "showSubmitReply()", style: "height: 30px; width: 95%;  resize: none;" %>
-    <%= hidden_field_tag 'post_id', answers["post_id"], id: "postId" %>
-      <br>
-    <span class = "submitPost" id = "submitReply">
-      <%= f.submit "Reply", class: "btn btn-inverse", style: "display:inline;"%>
-    </span>
-
-  <% end %>
-</div>
-
-
+<h1>Chatroom#index</h1>
+<p>Find me in app/views/chatroom/index.html.erb</p>
