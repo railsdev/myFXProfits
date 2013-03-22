@@ -19,6 +19,7 @@ Tradesite::Application.routes.draw do
   match '/about',           to: 'pages#about'
   match '/disclaimer',      to: 'pages#disclaimer'
   match '/pricing',         to: 'pages#plans'
+  match '/admin',           to: 'pages#admin'
 
   #Users Pages
   match '/signup',          to: 'users#new'

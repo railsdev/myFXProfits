@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20130315200750) do
     t.string   "password"
     t.string   "password_confirmation"
     t.string   "remember_token"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20130315200750) do
     t.string   "paypal_payment_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.integer  "number",                 :limit => 255
+    t.string   "number"
     t.string   "type"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"

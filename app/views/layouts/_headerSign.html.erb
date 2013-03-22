@@ -9,14 +9,17 @@
   <div class = "container clearfix">
     <h1 style = "float: left; margin-top: 5px;display: inline;">
         <a href="/"  class = "titleLink">
-        <span style = "color: #333; font-size: 25px;">MY</span><span style = "
-text-shadow: 0px 1px 2px #555;">FX</span><span style = "color: #333; font-size: 25px;">PROFITS</span>       </a>
+        <span style = "color: #333; font-size: 25px;">MY</span><span>FX</span><span style = "color: #333; font-size: 25px;">PROFITS</span>       </a>
      </h1>
 
     <div id = "navcontainer"  style = "">
       <ul>
         <li class = <%= yield(:messageboard) %>>  <a href = '/' > MessageBoard</a> </li>
         <li class = <%= yield(:videos) %> >  <a href = '/videos'>Videos</a>       </li>
+        <% if @user.admin %>
+        <li class = 'headerlinksSign' >  <a href = '/admin'>Administrative Tools</a>       </li>
+        <% end %>
+
 
         <span class = "right">
           <li>
