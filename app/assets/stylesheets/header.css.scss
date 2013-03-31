@@ -3,7 +3,7 @@ $blue: #0b3e7f;
 $red: #AA4814;
 
 .header-container {
-height: 70px;
+height: 50px;
 background-color: #FFF;
 border-bottom: 1px solid #ddd;
 }
@@ -103,3 +103,85 @@ list-style-type: none;
   width: auto;
   border-radius: 3px;
 }
+
+/* NAV STYLING */
+
+nav ul {
+  -webkit-font-smoothing:antialiased;
+  text-shadow:0 1px 0 #333;
+  color: #333;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #FFF;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+nav li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+nav a {
+    min-width: 125px;
+    border-left: 1px solid #DDD;
+    text-shadow:0 1px 0 #333;
+    color: #333;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #FFF;
+    display: block;
+    font: bold 16px/50px sans-serif;
+    padding: 0 25px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+nav li:hover a {
+    background: #FFF;
+    color: $red;
+}
+nav li ul {
+    float: left;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    visibility: hidden;
+    z-index: 1;
+    -webkit-transition: all .25s ease;
+       -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+            transition: all .25s ease;
+}
+nav li:hover ul {
+    opacity: 1;
+    top: 50px;
+    visibility: visible;
+}
+nav li ul li {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    float: none;
+    width: 100%;
+}
+nav li ul a:hover {
+    background: #FFF;
+    color: $red;
+}
+
+
+.cf:after {
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+
+.title {line-height: 45px;  text-decoration: none; font-size: 40px; float:left; margin: 0; padding: 0; padding-left: 20px; }
