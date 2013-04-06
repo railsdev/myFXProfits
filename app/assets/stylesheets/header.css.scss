@@ -105,6 +105,9 @@ list-style-type: none;
 }
 
 /* NAV STYLING */
+nav {
+ min-width: 900px;
+}
 
 nav ul {
   -webkit-font-smoothing:antialiased;
@@ -133,7 +136,7 @@ nav a {
     background-color: #FFF;
     display: block;
     font: 16px/50px sans-serif;
-    padding: 0 25px;
+    padding: 0 5px;
     text-align: center;
     text-decoration: none;
     -webkit-transition: all .25s ease;
