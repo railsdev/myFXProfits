@@ -6,7 +6,7 @@ gem 'pismo', '0.7.2'
 gem 'paypal-recurring'
 gem 'best_in_place'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'time-ago-in-words', :git => "git://github.com/Sirupsen/time-ago-in-words.git"
+gem 'time_ago_in_words', :git => 'git://github.com/elgalu/time_ago_in_words.git'
 gem 'twilio-ruby'
 gem 'will_paginate'
 gem 'kaminari'
@@ -20,7 +20,7 @@ gem 'aws-sdk'
 
 
 group :development, :test do
-  gem 'pg'
+  gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', '1.2.0'
