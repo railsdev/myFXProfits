@@ -1,18 +1,17 @@
-common: &common
-  username: myfx
-  adapter: postgresql
-  host: localhost
-#
 development:
-  <<: *common
-  database: myfx_development
-  host: localhost
-#
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
 production:
-  <<: *common
-  database: myfx_production
-#
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
 test:
-  <<: *common
-  database: myfx_test
-  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
