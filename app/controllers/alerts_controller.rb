@@ -12,11 +12,9 @@ class AlertsController < ApplicationController
 
   def create
 
-    #Credentials
-    account_sid = 'ACe258aaabe53da86578b9d53591760950'
-    auth_token = '35455067054ffa37809ce7a5f43e541b'
+    account_sid = ENV['TWILIO_SID']
+    auth_token = ENV['TWILIO_AUTH']
 
-    #set up a client to talk to the Twilio REST API
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     twil_number = '+12268872873'
@@ -25,9 +23,9 @@ class AlertsController < ApplicationController
     @users.each do |user|
 
       @client.account.sms.messages.create(
-      :from => twil_number,
-      :to => "+1#{user.number}",
-      :body => params[:alert][:body]
+        :from => twil_number,
+        :to => "+1#{user.number}",
+        :body => params[:alert][:body]
       )
 
     end

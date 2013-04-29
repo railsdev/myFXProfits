@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "gmail.com",
   :user_name            => "myfxprofits.noreply",
-  :password             => "foobar123",
+  :password             => ENV['EMAIL_PASS'],
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
