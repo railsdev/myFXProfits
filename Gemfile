@@ -16,6 +16,8 @@ gem "rmagick", :require => 'RMagick'
 gem 'panda', '~> 1.5.0'
 gem 'aws-sdk'
 
+gem 'stripe'
+
 gem 'rufus-scheduler'
 
 

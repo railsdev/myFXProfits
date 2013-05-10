@@ -42,16 +42,6 @@ class User < ActiveRecord::Base
 	    save!
 	end
 
-	def paypal
-		PaypalPayment.new(self)
-	end
-
-	def save_with_payment
-		response = paypal.make_recurring
-		self.paypal_recurring_profile_token = response.profile_id
-		save!
-	end
-
 	def send_password_reset
 		generate_token(:password_reset_token)
 		self.password_reset_token = self.password_reset_token.to(6)
@@ -66,7 +56,7 @@ class User < ActiveRecord::Base
 
 	def generate_token(column)
 		begin
-		self[column] = SecureRandom.urlsafe_base64
+			self[column] = SecureRandom.urlsafe_base64
 		end while User.exists?(column => self[column])
 	end
 
