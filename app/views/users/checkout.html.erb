@@ -77,8 +77,19 @@ $(function() {
 
           <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 10}, style: "display:inline; width: 210px;" %>
           <br>
+        <p style = "float:left; display:inline-block;"> To test subscriptions use:
+          <br>
+           Card: 4242 4242 4242 4242 
+           <br>
+           Code: 202
+           <br> 
+         </p>
+         <p>
+          <br>
           <input class = "btn btn-primary right" name="commit" type="submit" value="Checkout">
           <br>
+        </p>
+        <br>
         <% end %>
       </div>
     </div>
