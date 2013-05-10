@@ -6,93 +6,113 @@
 <script>
 function switchSubmit()
 {
-if(document.getElementById('user_paid_false').checked){
-	$('#paid').hide()
-	$('#free').show()
+	if(document.getElementById('user_paid_false').checked){
+		$('#paid').hide()
+		$('#free').show()
 	}
-if( document.getElementById('user_paid_true').checked){
-	$('#paid').show()
-  	$('#free').hide()
-  	}
+	if(document.getElementById('user_paid_true').checked){
+		$('#paid').show()
+		$('#free').hide()
+	}
 }
 
 </script>
 
-<br>
+
 <div class = "container">
 
-	 <% if @user.errors.any? %>
-         <div class = "alert">
-            <%= @user.errors.full_messages[0] %>
-         </div>
-    <% end %>
 
-<table class = "bordered"  style = "display: inline;">
-	<td class = "HomePageCol1">
-	<div class = "fieldgroup"  style = "display: inline;">
-		<div class = "fields">
-
-		<%= form_for(@user) do |f| %>
-
-		<h3 class = "formtext">Sign Up</h3>
-			<span class = "names">
-				<%= f.text_field :firstname, :placeholder => "First Name"%>
-				<%= f.text_field :lastname, :placeholder => "Last Name"%>
-			</span>
-				<br>
-				<%= f.text_field :name, :placeholder => "Username"%>
-				<br>
-				<%= f.text_field :email, :placeholder => "Email" %>
-				<br>
-				<%= f.password_field :password, :placeholder => "Password" %>
-				<br>
-				<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
-				<br>
-			<div class="field">
-				<table id = "field">
-
-				<td>
-
-					<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%>
-					<%= f.label :paid, "Free Account", :value => false, style: "width: 190px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
-
-					<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
-					<%= f.label :paid, 'Paid Account', :value => true, style: "width: 190px; padding-left: 20px; padding-top: 2px;"%>
-
-				</td>
-
-					<td style = "width: 220px;">
-					<span id = "free"  >
-						<%= f.submit "Create a Free Account", class: "btn btn-large btn-primary right", style: "width: 220px;"%>
-					</span>
-					<span id = "paid" style = "display: none;" >
-						<%= f.submit "Checkout With Paypal", class: "btn btn-large btn-primary right", style: "width: 220px;"%>
-					</span>
-					</td>
-				</table>
-				<a style = "font-size: 10px; margin-left: 50px; color: #941;" href = '/disclaimer'>By signing up you agree to the terms laid out in the <strong>disclaimer</strong></a>
-			</div>
-		<% end %>
+	<% if @user.errors.any? %>
+		<div class = "alert">
+			<%= @user.errors.full_messages[0] %>
 		</div>
-	</div>
-	</td>
+	<% end %>
 
-	<td class = "HomePageCol2">
+	<table class = "bordered"  style = "display: inline;">
+		<td class = "HomePageCol1">
+			<div class = "fieldgroup"  style = "display: inline;">
+				<div class = "fields">
 
-			<h2 class = "center" style =  "font-weight: normal;">Everything you need to become a successful trader</h2>
-			<h4 class = "heading center">Expert coaching, chatrooms, trade alerts, archived lessons and realtime trading rooms</h4>
-			<h5 class = "center"> 30 Pips And You're Done </h5>
-			<br>
+					<%= form_for(@user) do |f| %>
+
+					<h3 class = "formtext">
+						Sign Up
+					</h3>
+
+					<span class = "names">
+						<%= f.text_field :firstname, :placeholder => "First Name"%>
+						<%= f.text_field :lastname, :placeholder => "Last Name"%>
+					</span>
+
+					<br>
+					<%= f.text_field :name, :placeholder => "Username"%>
+					<br>
+					<%= f.text_field :email, :placeholder => "Email" %>
+					<br>
+					<%= f.password_field :password, :placeholder => "Password" %>
+					<br>
+					<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+					<br>
+
+					<div class="field">
+						<table id = "field">
+
+							<td>
+
+								<%= f.radio_button :paid, false, class: "left", :onclick => "switchSubmit()"%>
+								<%= f.label :paid, "Free Account", :value => false, style: "width: 190px; font-size: 15px; padding-left: 20px; padding-top: 2px;"%>
+
+								<%= f.radio_button :paid, true , class: "left", :onclick => "switchSubmit()"%>
+								<%= f.label :paid, 'Paid Account', :value => true, style: "width: 190px; padding-left: 20px; padding-top: 2px;"%>
+
+							</td>
+
+							<td style = "width: 220px;">
+								<span id = "free"  >
+									<%= f.submit "Create a Free Account", class: "btn btn-large btn-primary right", style: "width: 220px;"%>
+								</span>
+								<span id = "paid" style = "display: none;" >
+									<%= f.submit "Proceed to Checkout", class: "btn btn-large btn-primary right", style: "width: 220px;"%>
+								</span>
+							</td>
+
+						</table>
+						<a style = "font-size: 10px; margin-left: 50px; color: #941;" href = '/disclaimer'>
+							By signing up you agree to the terms laid out in the <strong>disclaimer</strong>
+						</a>
+					</div>
+
+					<% end %>
+
+				</div>
+			</div>
+		</td>
+
+		<td class = "HomePageCol2">
+
+			<h2 class = "center" style =  "font-weight: normal;">
+				Everything you need to become a successful trader
+			</h2>
+
+			<h4 class = "heading center">
+				Expert coaching, chatrooms, trade alerts, archived lessons and realtime trading rooms
+			</h4>
+
+			<h5 class = "center"> 
+				30 Pips And You're Done 
+			</h5>
+
 			<center>
 				<a href="http://www.ninjatrader.com/"><img style = "width: 300px;"src = "./../assets/ninja.png"></a>
 			</center>
+
 			<center>
 				<span style = "margin-left: 10px; color: #888; font-weight: 200; font-size: 10px; font-style: italic;">
 					Our preferred trading platform
 				</span>
 			</center>
-	</td>
+		</td>
 
-</table>
+	</table>
 
 </div>

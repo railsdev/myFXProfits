@@ -7,7 +7,7 @@ class VideosController < ApplicationController
 
   def index
 
-  	   @videos = Video.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
+  	@videos = Video.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
 
     @encodings = []
     @videos.each do |v|

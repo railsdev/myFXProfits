@@ -1,39 +1,59 @@
 <script type="text/javascript">
     $(function () {
-    $('#logout').tooltip({ trigger: "hover", placement: "bottom" });
-    $('#settings').tooltip({ trigger: "hover", placement: "bottom" });
+      $('#logout').tooltip({ trigger: "hover", placement: "bottom" });
+      $('#settings').tooltip({ trigger: "hover", placement: "bottom" });
     });
 </script>
 
 <div class="header-containerSign">
   <div class = "container clearfix">
+    
     <h1 style = "float: left; margin-top: 5px;display: inline;">
         <a href="/"  class = "titleLink">
         <span style = "color: #333; font-size: 25px;">MY</span><span>FX</span><span style = "color: #333; font-size: 25px;">PROFITS</span>       </a>
      </h1>
 
-    <div id = "navcontainer"  style = "">
+    <div id = "navcontainer">
+
       <ul>
-        <li class = <%= yield(:messageboard) %>>  <a href = '/' > MessageBoard</a> </li>
-        <li class = <%= yield(:videos) %> >  <a href = '/videos'>Videos</a>       </li>
+
+        <li class = <%= yield(:messageboard) %>>  
+          <a href = '/' > MessageBoard</a>  
+        </li>
+        <li class = <%= yield(:videos) %> >  
+          <a href = '/videos'>Videos</a>         
+        </li>
+
         <% if @user.admin %>
-        <li class = 'headerlinksSign' >  <a href = '/admin'>Administrative Tools</a>       </li>
+          <li class = 'headerlinksSign' >
+            <a href = '/admin'>Administrative Tools</a>  
+          </li>
         <% end %>
 
 
+        <!-- Nav tools floated right  -->
         <span class = "right">
           <li>
-              <a href = '#' ><img src = <%= @user.avatar.url(:thumb) %> class = "thumbHeader" > <%= @user.name %> &nbsp; </a>
+              <a href = '/account' >
+                <img src = <%= @user.avatar.url(:thumb) %> class = "thumbHeader" > 
+                <%= @user.name %> &nbsp; 
+              </a>
           </li>
           <li>
-            <a  id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'><i class = "icon-cogs"></i> &nbsp;</a>
+            <a id = "settings" data-toggle="tooltip" data-original-title="Edit Account" href = '/account'>
+              <i class = "icon-cogs"></i> &nbsp;
+            </a>
           </li>
           <li>
-              <a id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout"> <i class = "icon-signout"> &nbsp;</i></a>
+              <a id = "logout" data-toggle="tooltip" data-original-title="Sign Out" href="/logout">
+                <i class = "icon-signout"> &nbsp;</i>
+              </a>
           </li>
 
         </span>
+
       </ul>
+
     </div>
 
 

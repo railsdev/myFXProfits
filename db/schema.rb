@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315200750) do
+ActiveRecord::Schema.define(:version => 20130510211900) do
 
   create_table "alerts", :force => true do |t|
     t.integer  "send_number"
@@ -62,9 +62,6 @@ ActiveRecord::Schema.define(:version => 20130315200750) do
     t.string   "lastname"
     t.boolean  "paid"
     t.boolean  "registered"
-    t.string   "paypal_customer_token"
-    t.string   "paypal_recurring_token"
-    t.string   "paypal_payment_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "number"
@@ -75,6 +72,9 @@ ActiveRecord::Schema.define(:version => 20130315200750) do
     t.datetime "avatar_updated_at"
     t.boolean  "admin"
     t.integer  "phone"
+    t.string   "stripe_token"
+    t.string   "last_4_digits"
+    t.datetime "expiry_date"
   end
 
   create_table "videos", :force => true do |t|

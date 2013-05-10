@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
 
 	#Accessible Attributes
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname,
-  :lastname, :paid, :registered, :paypal_payment_token, :paypal_recurring_profile_token,
-  :paypal_customer_token, :password_reset_token, :phone, :avatar
+  	attr_accessible :email, :name, :password, :password_confirmation, :remember_token, :firstname,
+  	:lastname, :paid, :registered, :password_reset_token, :phone, :avatar, :stripe_token, :last_4_digits, :expiry_date
 
 	has_attached_file :avatar, styles: { thumb: '100x100>', square: '200x200#',	medium: '300x300>'}
 

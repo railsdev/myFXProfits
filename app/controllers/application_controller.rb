@@ -1,16 +1,12 @@
 class ApplicationController < ActionController::Base
-
-  protect_from_forgery
-  require 'chronic'
-  include SessionsHelper
+	protect_from_forgery
+	include SessionsHelper
 
   	def session_exists
-	    logger.debug(signed_in?)
 	    if signed_in?
 	    	@user = current_user
-
-		  else
-		  	redirect_to new_user_path
+		else
+		  redirect_to new_user_path
 	  end
 	end
 

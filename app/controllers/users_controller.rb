@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :session_exists, :only => [:edit, :paypal, :account]
+before_filter :session_exists, :only => [:edit, :checkout]
 respond_to :html, :json
 
   def new
@@ -13,16 +13,11 @@ respond_to :html, :json
     if signed_in?
       redirect_to root_path
     end
-  @user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:email])
   end
 
   def edit
     @user = current_user
-  end
-
-  def show
-    @user = User.find(params[:id])
-        redirect_to edit_user_path
   end
 
   def update
@@ -39,42 +34,77 @@ respond_to :html, :json
     sign_in @user
   end
 
-  def paypal
-    @user = current_user
-  end
-
-  def paypal_checkout
-    user = current_user
-    redirect_to user.paypal.checkout_url(
-        :return_url =>  confirmpayment_url,
-        :cancel_url =>  root_url
-        )
-  end
-
-  def confirm
-    @user = current_user
-    if params[:PayerID]
-        @user.paypal_customer_token = params[:PayerID]
-        @user.paypal_payment_token  = params[:token]
-        @user.registered = true
-      end
-    logger.debug(@user.paypal_customer_token)
-    logger.debug(@user.paypal_payment_token )
-    @user.save!
-  end
-
   def create
     @user = User.new(params[:user])
     if @user.save
+      begin
         UserMailer.registration_confirmation(@user).deliver
+      rescue Exception => e
+        logger.debug(e)
+      end
         sign_in @user
        if @user.paid
-          redirect_to paypal_checkout_path
+          redirect_to checkout_path
        else
-       redirect_to root_path
+          redirect_to root_path
        end
     else
-    render 'new'
+      render 'new'
+    end
+  end
+
+  def checkout
+
+    @user = current_user
+
+    if @user.registered?
+      flash[:error] = "Your subscription has not yet ended"
+      redirect_to root_path
+    end
+    if request.post?
+
+      logger.debug("--------------------------------------")
+      logger.debug("Checkout Started")
+      description = @user.email + "'s MyFX Subscription"
+      token = params[:stripe_token]
+      last_4_digits = params[:last_4_digits]
+
+      # Logging stuffff 
+      logger.debug(token)
+      logger.debug(last_4_digits)
+
+      begin
+
+        charge = Stripe::Charge.create(
+          :amount => 2500, #CENTS
+          :currency => "cad",
+          :card => token,
+          :description => description
+        )
+
+        @user.stripe_token = token
+        @user.last_4_digits = last_4_digits
+
+        if @user.save
+            @user.expiry_date = 7.days.from_now
+            @user.registered = true
+            @user.save
+            sign_in @user
+            redirect_to root_path
+        else
+          flash[:error] = "There was a problem with your payment" 
+          render :action => :checkout
+        end
+        
+      rescue Stripe::CardError => e
+          flash[:error] = "There was a problem with your payment" 
+          render :action => :checkout
+
+      rescue Stripe::StripeError => e
+          flash[:error] = "There was a problem with your payment" 
+          render :action => :checkout
+      end
+
     end
   end
 

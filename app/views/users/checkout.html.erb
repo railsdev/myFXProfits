@@ -1,0 +1,87 @@
+<% provide(:account, "headerlinksActiveSign") %>
+<% provide(:messageboard, "headerlinksSign") %>
+<% provide(:other, "headerlinksSign") %>
+<% provide(:videos, "headerlinksSign") %>
+
+<script>
+
+$(function() {
+
+  $("#checkout").submit(function() {
+    var form = this;
+
+    console.log("Form submit");
+
+    var card = {
+      number:   $("#credit_card_number").val(),
+      expMonth: $("#_expiry_date_2i").val(),
+      expYear:  $("#_expiry_date_1i").val(),
+      cvc:      $("#cvv").val()
+    };
+
+
+    Stripe.createToken(card, function(status, response) {
+      if (status === 200) {
+
+        $("#last_4_digits").val(response.card.last4);
+        $("#stripe_token").val(response.id);
+
+        form.submit();
+        
+      }
+      else if (status == 402) {
+        alert("Invalid Credit Card");
+      }
+       else {
+        console.log(status)
+        $("#stripe-error-message").text(response.error.message);
+        $("#credit-card-errors").show();
+        $("#premium_submit").attr("disabled", true);
+      }
+    });
+
+    return false;
+  });
+
+});
+
+</script>
+
+<noscript>
+  <p>This form requires Javascript to use</p>
+</noscript>
+
+
+<div class = "container">
+  <div style = "width: 470px; margin-left: 235px;">
+
+    <div class = "fieldgroup">
+
+      <div class = "fields">
+
+        <%= form_for(:checkout, url: checkout_path, :html => { :id => "checkout" }) do |f| %>
+
+          <%= csrf_meta_tag %>
+
+          <%= hidden_field_tag :stripe_token %>
+          <%= hidden_field_tag :last_4_digits %>
+
+
+          <%= label_tag :credit_card_number %>
+          <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field" %>
+
+          <%= label_tag :cvv, "Security code (CVV)" %>
+          <%= text_field_tag :cvv, params[:cvv] %>
+
+          <%= label_tag :expiry_date%>
+
+          <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 10}, style: "display:inline; width: 210px;" %>
+          <br>
+          <input class = "btn btn-primary right" name="commit" type="submit" value="Checkout">
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

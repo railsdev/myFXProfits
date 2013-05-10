@@ -5,51 +5,37 @@
 
 <script type = "text/javascript">
 
-function showSubmit()
-{
-  if (document.getElementById('postArea').value == ""){
-    $('#submitPost').slideUp();
-    $('#submitPostHolder').slideDown();
-  }
-  else{
-    $('#submitPost').slideDown();
-    $('#submitPostHolder').slideUp();
-  }
-
-}
-
-  $('#postArea').change(function(){ alert('Changed!'); })
+$(function () {
 
   var previd = 0;
 
   function loadComments(id) {
+
     if (previd == 0) {
-    document.getElementById(id).style.borderRight = "5px solid #AA4814";
-    document.getElementById(id).style.backgroundColor = "#F6F6F6";
-    document.getElementById('commentButton'+id).innerHTML = "Hide Comments";
-    $('#answer-column'+id).show();
-     previd = id;
-  }
-  else if (previd == id) {
-    $('#answer-column'+previd).hide();
-    document.getElementById(previd).style.borderRight = "0";
-    document.getElementById(previd).style.backgroundColor = "#FAFAFA";
-    document.getElementById('commentButton'+id).innerHTML = "View Comments";
-    previd = 0;
-  }
-  else {
-    $('#answer-column'+previd).hide();
-    $('#answer-column'+id).show();
-    document.getElementById(previd).style.borderRight = "0";
-    document.getElementById(previd).style.backgroundColor = "#FAFAFA";
-    document.getElementById(id).style.borderRight = "5px solid #AA4814";
-    document.getElementById(id).style.backgroundColor = "#F6F6F6";
-    document.getElementById('commentButton'+previd).innerHTML = "View Comments";
-    document.getElementById('commentButton'+id).innerHTML = "Hide Comments";
-
-    previd = id;
-  }
-
+      document.getElementById(id).style.borderRight = "5px solid #AA4814";
+      document.getElementById(id).style.backgroundColor = "#F6F6F6";
+      $('#commentButton'+id).html("Hide Comments");
+      $('#answer-column'+id).show();
+      previd = id;
+    }
+    else if (previd == id) {
+      $('#answer-column'+previd).hide();
+      document.getElementById(previd).style.borderRight = "0";
+      document.getElementById(previd).style.backgroundColor = "#FAFAFA";
+      $('#commentButton'+id).html("View Comments");
+      previd = 0;
+    }
+    else {
+      $('#answer-column'+previd).hide();
+      $('#answer-column'+id).show();
+      document.getElementById(previd).style.borderRight = "0";
+      document.getElementById(previd).style.backgroundColor = "#FAFAFA";
+      document.getElementById(id).style.borderRight = "5px solid #AA4814";
+      document.getElementById(id).style.backgroundColor = "#F6F6F6";
+      $('#commentButton'+previd).html("View Comments");
+      $('#commentButton'+id).html("Hide Comments");
+      previd = id;
+    }
 
     $.ajax({
       url: "/retrieve_answers",
@@ -61,8 +47,31 @@ function showSubmit()
 
       },
 
-    })
-  };
+    });
+
+  }
+
+  $('.viewComments').click(function () {
+    console.log("ViewComments")
+    console.log($('#postArea').val());
+    id = this.getAttribute('post-id');
+    loadComments(id);
+  });
+
+  $('#postArea').keyup(function(){ 
+
+    if ($('#postArea').val() == ""){
+      $('#submitPost').slideUp();
+      $('#submitPostHolder').slideDown();
+    }
+    else{
+      $('#submitPost').slideDown();
+      $('#submitPostHolder').slideUp();
+    }
+
+  });
+  
+});
 
 
 </script>
@@ -72,37 +81,33 @@ function showSubmit()
 
   <div class = "postcreate-container">
     <!-- Form to create posts -->
-   <%= form_for(:post, url: posts_path) do |f| %>
-        <% @user = current_user %>
+    <%= form_for(:post, url: posts_path) do |f| %>
+    <% @user = current_user %>
 
-        <%= f.text_area :body, :placeholder => "Hey, #{@user.name}, post something", style: "height: 30px; width: 50%;", onkeyup: "showSubmit()", id: "postArea"%>
+    <%= f.text_area :body, :placeholder => "Hey, #{@user.name}, post something", style: "height: 30px; width: 50%;", id: "postArea"%>
 
-      <div style = "height: 35px;" class = "submitPost" id = "submitPost">
-        <!--<select id="post_postType" name="post[postType]">
-          <option value="Message Type?" selected="selected" disabled="disabled">Message Type?</option>
-          <option value="Question">Question</option>
-          <option value="Alert">Alert</option>
-          <option value="Suggestion">Suggestion</option>
-          <option value="Other">Other</option>
-        </select>-->
-        <input class="btn btn-inverse btn-large", id = "submitButton" name="commit" type="submit" value="Share">
-      </div>
-      <div style = "height: 35px;" id = "submitPostHolder">
-        <h5 class = "heading" style = "padding: 0px; margin: 0px; display: inline; vert"> You can post a question, a message or just whatever's on your mind </h5>
-      </div>
+    <div style = "height: 35px;" class = "submitPost" id = "submitPost">
+      <input class="btn btn-inverse btn-large", id = "submitButton" name="commit" type="submit" value="Share">
+    </div>
 
-      <br>
+    <div style = "height: 35px;" id = "submitPostHolder">
+      <h5 class = "heading" style = "padding: 0px; margin: 0px; display: inline; vert"> 
+        You can post a question, a message or just whatever's on your mind 
+      </h5>
+    </div>
+
+    <br>
 
     <% end %>
   </div>
   <div class = "post-container">
 
-  		<div style = "margin-right: 250px;   min-height:1000px; vertical-align:top;" id="post-container">
-        <br>
+    <div style = "margin-right: 250px;   min-height:1000px; vertical-align:top;" id="post-container">
+      <br>
 
-        <%= render '/posts/post' %>
+      <%= render '/posts/post' %>
 
-  		</div>
+    </div>
 
   </div>
 

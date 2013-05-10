@@ -1,9 +1,16 @@
 <script>
-	function deletePost(id){
-var confirmation=window.confirm("Are you sure want to delete this post?")
-if (confirmation)
-window.location = '/deletePost/?id=' + id
-}
+
+	$(function(){
+		$('.delete').click(function(){
+			var id = this.getAttribute( 'post-id' );
+			console.log(id);
+			var confirmation= window.confirm("Are you sure want to delete this post?");
+			if (confirmation) {
+				window.location = '/deletePost/?id=' + id
+			}
+		});
+	});
+
 </script>
 
 <% for post in @posts %>
@@ -23,8 +30,9 @@ window.location = '/deletePost/?id=' + id
 
 							<!-- Delete Button -->
 							<% @user = current_user %>
+
 							<% if post.user_id = @user.id %>
-								<p id = "delete" class = "pull-right delete" style = "padding-left: 5px; padding-right: 5px; display:inline;" onclick = "deletePost(<%=post.id%>)"> X </p>
+								<p id = "delete" class = "pull-right delete" style = "padding-left: 5px; padding-right: 5px; display:inline;" post-id = "<%=post.id%>"> X </p>
 							<% end %>
 
 						</h5>
@@ -37,7 +45,7 @@ window.location = '/deletePost/?id=' + id
 				</td>
 
 			</table>
-		<a class = "viewComments" onclick=loadComments(<%= post.id %>) id = "commentButton<%=post.id.to_s%>"> View Comments </a>
+		<a class = "viewComments" post-id = "<%=post.id%>" id = "commentButton<%=post.id.to_s%>"> View Comments </a>
 		<div style = "margin-left: 50px; width: 400px; vertical-align:top" id="answer-column<%= post.id.to_s %>">
 
         <!-- Comments/Replies to posts render here -->

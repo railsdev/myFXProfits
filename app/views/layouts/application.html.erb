@@ -3,26 +3,11 @@
 
   <head>
 
-    <meta name="google-site-verification" content="3bcRvLYkrrSSXg1i7U8lbC4yltlNCw9QHnwIKCb9SwU" />
-
-    <!-- Bootstrap Scripts -->
-    <script src="./../assets/jquery.js"> </script>
-    <script src="./../assets/bootstrap.js"> </script>
-
-    <!-- Bootstrap CSS -->
-    <link href="./../assets/bootstrap.css" rel="stylesheet">
-    <link href="./../assets/bootstrap-responsive.css" rel="stylesheet">
-    <link href="./../assets/custom.css.scss" rel="stylesheet">
-    <link href="./../assets/application.css" rel="stylesheet">
-
-    <!-- Icon
-   <!--  <link rel="shortcut icon" href="./../assets/money.jpg"/>-->
-
-    <title>myfxprofits</title>
-      <%= stylesheet_link_tag "application", :media => "all" %>
-      <%= javascript_include_tag "application" %>
-
-
+    <title> MyFX </title>
+    
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+      <%= javascript_tag "Stripe.publishableKey = '#{STRIPE_PUBLIC_KEY}';" %>
       <%= csrf_meta_tags %>
 
       <!-- Header -->
@@ -36,7 +21,9 @@
 
   <body>
     <br>
+
     <%= render 'shared/flash_messages' if !flash.empty? %>
+
     <%= yield %>
     <br>
   </body>

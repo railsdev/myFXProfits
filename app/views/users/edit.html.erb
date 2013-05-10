@@ -4,106 +4,110 @@
 <% provide(:videos, "headerlinksSign") %>
 
 <script type="text/javascript">
-    $(function () {
-		$('#editpic').tooltip({ trigger: "hover", placement: "left" });
-    });
+
+$(function () {
+	$('#editpic').tooltip({ trigger: "hover", placement: "left" });
+
+	$('#user_avatar').change(function (){
+		$('#avatarbutton').click();
+	});
 
 
-		function submitForm() {
-			$('#avatarbutton').click();
-		}
 
+	$('#personalButton').click(function(){
+		$('#personal').hide()
+		$('#Personaltitle').hide()
+		$('#personalButton').hide()
+		$('#billing').show()
+		$('#billingButton').show()
+	});
 
-		function switchInfo(idNum)
-		{
+	$('#billingButton').click(function(){
 
-			if(idNum == 1){
-				$('#personal').hide()
-				$('#Personaltitle').hide()
-				$('#personalButton').hide()
-				$('#billing').show()
-				$('#billingButton').show()
-			}
-			if(idNum == 2){
-				$('#personal').show()
-				$('#Personaltitle').show()
-				$('#personalButton').show()
-				$('#billing').hide()
-				$('#billingButton').hide()
-			}
-		}
+		$('#personal').show()
+		$('#Personaltitle').show()
+		$('#personalButton').show()
+		$('#billing').hide()
+		$('#billingButton').hide()
+
+	});
+});
+
 </script>
 
 <div class = "container" id = "container">
 
 	<div class = "page-header">
 		<table>
-		<td>
+			<td>
 
-		<% if @user.errors.any? %>
-         <div class = "alert">
-            <%= @user.errors %>
-         </div>
-   		<% end %>
+				<% if @user.errors.any? %>
+				<div class = "alert">
+					<%= @user.errors %>
+				</div>
+				<% end %>
 
-   		<br>
+				<br>
 
-			<%= form_for @user, :html => { :multipart => true } do |form| %>
+				<%= form_for @user, :html => { :multipart => true } do |form| %>
 
-			<label class="filebutton" id="editpic" href="#" data-toggle="tooltip" data-original-title="Update Avatar">
-			<%= image_tag @user.avatar.url(:thumb), class: "thumb"%>
-			<span><input id="user_avatar" name="user[avatar]" type="file" onchange = "submitForm()" ></span>
-			</label>
+				<label class="filebutton" id="editpic" href="#" data-toggle="tooltip" data-original-title="Update Avatar">
+					<%= image_tag @user.avatar.url(:thumb), class: "thumb"%>
+					<span>
+						<input id="user_avatar" name="user[avatar]" type="file">
+					</span>
+				</label>
 
 
-		</td>
-		<td>
-		<h1 class = "heading"> Account Info </h1>
-			<h5 class = "heading">
-			Here you can view and edit your account information
-			</h5>
-		</td>
+			</td>
+			<td>
+				<h1 class = "heading"> Account Info </h1>
+				<h5 class = "heading">
+					Here you can view and edit your account information
+				</h5>
+			</td>
 
 		</table>
 	</div>
-		<a href = "#" id = "personalButton" onclick = "switchInfo(1)">Edit Billing Information?</a>
-		<a href ="#" id = "billingButton" onclick = "switchInfo(2)"  style = "display: none;">Edit Personal Information?</a>
+	<a href = "#" id = "personalButton">Edit Billing Information?</a>
+	<a href ="#" id = "billingButton" style = "display: none;">Edit Personal Information?</a>
 
 	<table id = "billing" style = "display: none;">
-			<td class = "right">
-				<h3> Billing Information </h3>
-				<div class = "arrowdiv">
-					Full Plan
-				</div>
+		<td class = "right">
+			<h3> Billing Information </h3>
+			<div class = "arrowdiv">
 				<% if @user.registered? %>
-				<h4> You are registered for a paid account  </h4>
+					<h4> You are registered for a paid account  </h4>
+					<h4> Your subscription ends on <%= @user.expiry_date.strftime("%D") %> </h4>
+					<h4>Since you have not subscribed for automatic billing, you will have to resubscribe when your account expires</h4>
 				<% else %>
-				<h4> You are registered for a free account </h4>
+					<h4> You are registered for a free account </h4>
 				<% end %>
-			</td>
+			</div>
+		</td>
 	</table>
 
 	<table id = "personal">
 
-			<h3 id = "Personaltitle"> Personal Information </h3>
-			<td>
+		<h3 id = "Personaltitle"> Personal Information </h3>
+		<td>
 			<div class = "arrowdiv">
-			User Name <img src = "./../assets/arrow.png" class = "arrow">
+				User Name <img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 			<div class = "arrowdiv">
-			First Name<img src = "./../assets/arrow.png" class = "arrow">
+				First Name<img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 			<div class = "arrowdiv">
-			Last Name<img src = "./../assets/arrow.png" class = "arrow">
+				Last Name<img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 			<div class = "arrowdiv">
-			Email<img src = "./../assets/arrow.png" class = "arrow">
+				Email<img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 			<div class = "arrowdiv">
-			Phone Number &nbsp;<img src = "./../assets/arrow.png" class = "arrow">
+				Phone Number &nbsp;<img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 			<div class = "arrowdiv">
-			Location <img src = "./../assets/arrow.png" class = "arrow">
+				Location <img src = "./../assets/arrow.png" class = "arrow">
 			</div>
 		</td>
 
